@@ -1,0 +1,498 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Apr 15 18:22:38 2025
+# Process ID: 11072
+# Current directory: C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1
+# Command line: vivado.exe -log Wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
+# Log file: C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1/Wrapper.vds
+# Journal file: C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Wrapper.tcl -notrace
+Command: synth_design -top Wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5900
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1329.266 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/Wrapper_timing.v:27]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-11072-P1-08/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-11072-P1-08/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'latch' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (2#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'latch' (3#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch.v:1]
+INFO: [Synth 8-6157] synthesizing module 'thirty_two_bit_adder' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/thirty_two_bit_adder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'eight_bit_adder' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/eight_bit_adder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'eight_bit_adder' (4#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/eight_bit_adder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'thirty_two_bit_adder' (5#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/thirty_two_bit_adder.v:1]
+WARNING: [Synth 8-7071] port 'ovf' of module 'thirty_two_bit_adder' is unconnected for instance 'pc_incrementer' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v:117]
+WARNING: [Synth 8-7023] instance 'pc_incrementer' of module 'thirty_two_bit_adder' has 5 connections declared, but only 4 given [C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v:117]
+INFO: [Synth 8-6157] synthesizing module 'latch_1bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'latch_1bit' (6#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch_1bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sx' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sx.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sx' (7#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sx.v:1]
+WARNING: [Synth 8-7071] port 'ovf' of module 'thirty_two_bit_adder' is unconnected for instance 'branch_adder' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v:173]
+WARNING: [Synth 8-7023] instance 'branch_adder' of module 'thirty_two_bit_adder' has 5 connections declared, but only 4 given [C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v:173]
+INFO: [Synth 8-6157] synthesizing module 'mux_4' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (8#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (9#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'is_zero' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/is_zero.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'is_zero' (10#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/is_zero.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_barrel' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_barrel.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_1bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_1bit' (11#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_1bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_2bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_2bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_2bit' (12#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_2bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_4bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_4bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_4bit' (13#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_4bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_8bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_8bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_8bit' (14#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_8bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_16bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_16bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_16bit' (15#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_16bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_barrel' (16#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_barrel.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_barrel' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_barrel.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_1bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_1bit' (17#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_1bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_2bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_2bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_2bit' (18#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_2bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_4bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_4bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_4bit' (19#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_4bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_8bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_8bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_8bit' (20#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_8bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_16bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_16bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_16bit' (21#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_16bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_barrel' (22#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_barrel.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_32' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_8' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8' (23#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_32' (24#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (25#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multdiv' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'counter' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tff' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/tff.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'tff' (26#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/tff.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (27#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mult' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mult.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_2bit_66b_version' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_2bit_66b_version.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_2bit_66b_version' (28#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_2bit_66b_version.v:1]
+INFO: [Synth 8-6157] synthesizing module 'reg_66' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/reg_66.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'reg_66' (29#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/reg_66.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multovf' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/multovf.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multovf' (30#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/multovf.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mult' (31#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/mult.v:1]
+INFO: [Synth 8-6157] synthesizing module 'div' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/div.v:1]
+INFO: [Synth 8-6157] synthesizing module 'divpos_to_neg' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/divpos_to_neg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'divpos_to_neg' (32#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/divpos_to_neg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_1bit_64b_version' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_1bit_64b_version.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_1bit_64b_version' (33#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_1bit_64b_version.v:1]
+INFO: [Synth 8-6157] synthesizing module 'reg_64' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/reg_64.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'reg_64' (34#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/reg_64.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'div' (35#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/div.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdiv' (36#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'latch_5bit' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch_5bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'latch_5bit' (37#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch_5bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (38#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/ROM.v:2]
+	Parameter MEMFILE bound to: 80'b01110100011010010110110101101001011011100110011100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'timing.mem' is read successfully [C:/Users/ng215/Desktop/ece350_final_project-main/sources/ROM.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (39#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/ROM.v:2]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/regfile.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (40#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (41#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:2]
+WARNING: [Synth 8-689] width (12) of port connection 'addr' does not match port width (8) of module 'RAM' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/Wrapper_timing.v:112]
+WARNING: [Synth 8-689] width (32) of port connection 'dataIn' does not match port width (8) of module 'RAM' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/Wrapper_timing.v:113]
+WARNING: [Synth 8-689] width (32) of port connection 'dataOut' does not match port width (8) of module 'RAM' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/Wrapper_timing.v:114]
+INFO: [Synth 8-6157] synthesizing module 'VGAController' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v:2]
+INFO: [Synth 8-6157] synthesizing module 'VGATimingGenerator' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGATimingGenerator.v:2]
+	Parameter HEIGHT bound to: 480 - type: integer 
+	Parameter WIDTH bound to: 640 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGATimingGenerator' (42#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGATimingGenerator.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized0' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 9 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 20 - type: integer 
+	Parameter DEPTH bound to: 307200 - type: integer 
+	Parameter MEMFILE bound to: 536'b01000011001110100010111101010101011100110110010101110010011100110010111000101111011011100110011100110010001100010011010100101111010001000110010101110011011010110111010001101111011100000010111101100101011000110110010100110011001101010011000001011111011001100110100101101110011000010110110001011111011100000111001001101111011010100110010101100011011101000010110101101101011000010110100101101110001011110111001101101111011101010111001001100011011001010111001100101111011010010110110101100001011001110110010100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'C:/Users./ng215/Desktop/ece350_final_project-main/sources/image.mem' is read successfully [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized0' (42#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:2]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ImageData' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v:59]
+WARNING: [Synth 8-7023] instance 'ImageData' of module 'RAM' has 5 connections declared, but only 4 given [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v:59]
+INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized1' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 9 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter MEMFILE bound to: 544'b0100001100111010001011110101010101110011011001010111001001110011001011100010111101101110011001110011001000110001001101010010111101000100011001010111001101101011011101000110111101110000001011110110010101100011011001010011001100110101001100000101111101100110011010010110111001100001011011000101111101110000011100100110111101101010011001010110001101110100001011010110110101100001011010010110111000101111011100110110111101110101011100100110001101100101011100110010111101100011011011110110110001101111011100100111001100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'C:/Users./ng215/Desktop/ece350_final_project-main/sources/colors.mem' is read successfully [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized1' (42#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v:2]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v:73]
+WARNING: [Synth 8-7023] instance 'ColorPalette' of module 'RAM' has 5 connections declared, but only 4 given [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'VGAController' (43#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (44#1) [C:/Users/ng215/Desktop/ece350_final_project-main/sources/Wrapper_timing.v:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1424.098 ; gain = 94.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1424.098 ; gain = 94.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1424.098 ; gain = 94.832
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.227 . Memory (MB): peak = 1424.098 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll'
+Finished Parsing XDC File [c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll'
+Parsing XDC File [C:/Users/ng215/Desktop/ece350_final_project-main/constraints/master.xdc]
+Finished Parsing XDC File [C:/Users/ng215/Desktop/ece350_final_project-main/constraints/master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ng215/Desktop/ece350_final_project-main/constraints/master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1495.941 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1495.941 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1495.941 ; gain = 166.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1495.941 ; gain = 166.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for pll. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1495.941 ; gain = 166.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1495.941 ; gain = 166.676
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'CPU/muxA' (mux_4) to 'CPU/muxA_muldiv'
+INFO: [Synth 8-223] decloning instance 'CPU/muxB' (mux_4) to 'CPU/muxB_muldiv'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[1].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[2].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[3].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[4].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[5].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[6].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[7].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[8].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[9].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[10].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[11].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[12].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[13].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[14].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[15].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[16].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[17].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[18].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[19].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[20].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[21].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[22].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[23].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[24].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[25].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[26].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[27].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[28].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[29].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[30].dff_0'
+INFO: [Synth 8-223] decloning instance 'RegisterFile/bit_reg_0[0].dff_0' (dffe_ref) to 'RegisterFile/bit_reg_0[31].dff_0'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 2     
++---XORs : 
+	   3 Input      1 Bit         XORs := 288   
+	   2 Input      1 Bit         XORs := 305   
++---Registers : 
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1712  
++---RAMs : 
+	            2700K Bit	(307200 X 9 bit)          RAMs := 1     
+	               3K Bit	(256 X 12 bit)          RAMs := 1     
+	               2K Bit	(256 X 8 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   66 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 146   
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 6     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP VGA_display/imgAddress, operation Mode is: (C or 0)+(A:0x280)*B.
+DSP Report: operator VGA_display/imgAddress is absorbed into DSP VGA_display/imgAddress.
+DSP Report: operator VGA_display/imgAddress0 is absorbed into DSP VGA_display/imgAddress.
+DSP Report: operator VGA_display/imgAddress is absorbed into DSP VGA_display/imgAddress.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1509.676 ; gain = 180.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+---------------------+---------------+----------------+
+|Module Name | RTL Object          | Depth x Width | Implemented As | 
++------------+---------------------+---------------+----------------+
+|Wrapper     | InstMem/dataOut_reg | 4096x17       | Block RAM      | 
++------------+---------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name          | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Wrapper              | ProcMem/MemoryArray_reg | 256 x 8(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RAM__parameterized0: | MemoryArray_reg         | 300 K x 9(NO_CHANGE)   | W | R |                        |   |   | Port A           | 0      | 90     | 
+|RAM__parameterized1: | MemoryArray_reg         | 256 x 12(NO_CHANGE)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below)
++--------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|VGAController | (C or 0)+(A:0x280)*B | 9      | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++--------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1577.270 ; gain = 248.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name          | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Wrapper              | ProcMem/MemoryArray_reg | 256 x 8(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
+|RAM__parameterized0: | MemoryArray_reg         | 300 K x 9(NO_CHANGE)   | W | R |                        |   |   | Port A           | 0      | 90     | 
+|RAM__parameterized1: | MemoryArray_reg         | 256 x 12(NO_CHANGE)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_3_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_5_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_7_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/MemoryArray_reg_9_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ColorPalette/MemoryArray_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |clk_wiz  |     1|
+|2     |BUFG     |     1|
+|3     |DSP48E1  |     1|
+|4     |LUT1     |     6|
+|5     |LUT2     |   115|
+|6     |LUT3     |   287|
+|7     |LUT4     |   219|
+|8     |LUT5     |   529|
+|9     |LUT6     |  1192|
+|10    |MUXF7    |   256|
+|11    |RAMB18E1 |     2|
+|13    |RAMB36E1 |    82|
+|92    |FDCE     |  1557|
+|93    |FDRE     |   116|
+|94    |IBUF     |    17|
+|95    |OBUF     |    30|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1754.715 ; gain = 425.449
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:53 . Memory (MB): peak = 1754.715 ; gain = 353.605
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1754.715 ; gain = 425.449
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1763.422 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 341 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1767.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: c0468eb3
+INFO: [Common 17-83] Releasing license: Synthesis
+187 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1767.129 ; gain = 437.863
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1/Wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 15 18:23:45 2025...
