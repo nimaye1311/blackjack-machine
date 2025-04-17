@@ -7,10 +7,10 @@ main:
 	j main
 
 write_mem:
-	sw $a0, 4097($0)
+	sw $a0, 4097($0) # want to write IO data, so write to 4097, IO data in $a0
 	jr $ra
 
 read_mem:
-	lw $v0, 4096($0)
+	lw $v0, 4096($0) # want to read IO data, so write to 4096, IO data saved in $v0
 	jr $ra
 
