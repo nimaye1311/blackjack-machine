@@ -31,7 +31,7 @@ module div(data_operandA, data_operandB,
 
     reg_64 AQ(.q(AQ_out), .d(AQ_in), .clock(clock), .en(1'b1), .clr(ctrl_DIV));
 
-    assign data_result = (data_operandA[31] ^ data_operandB[31]) ? DataResultNeg : AQ_out[31:0];
+    assign data_result = (data_operandA[31] ^ data_operandB[31]) ? DataResultNeg : AQ_out[63:32];
     assign data_exception = ~(|data_operandB);
 
 endmodule
