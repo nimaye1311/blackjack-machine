@@ -178,7 +178,8 @@ instrs = {	'nop' : ('R',  '00000'),
 			'sw'  : ('I',  '00111'),
 			'lw'  : ('I',  '01000'),
 			'setx': ('JI', '10101'),
-			'bex' : ('JI', '10110')}
+			'bex' : ('JI', '10110'),
+			'rand': ('I',  '10111')}
 instrs_inv = {	'00000R': 'add',
 				'00001R': 'sub',
 				'00010R': 'and',
@@ -196,7 +197,8 @@ instrs_inv = {	'00000R': 'add',
 				'00111' : 'sw' ,
 				'01000' : 'lw' ,
 				'10101' : 'setx',
-				'10110' : 'bex'}
+				'10110' : 'bex',
+				'10111' : 'rand'}
 bad_aliases = []
 conflict_aliases = collections.defaultdict(list)
 bad_instrs = []

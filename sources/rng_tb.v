@@ -20,7 +20,7 @@ module rng_tb;
     // State register and logging
     integer i;
     initial begin
-        current = 32'hdeadbeef;  // seed
+        current = 32'd1;  // seed
 
         $display("Time\t\tcurrent\t\t\t\tnext");
         $display("---------------------------------------------------------");
@@ -28,7 +28,7 @@ module rng_tb;
         // Generate 20 values
         for (i = 0; i < 100; i = i + 1) begin
             @(posedge clk);
-            $display("%0t\t%0d\t->\t%0d", $time, current % 52, next % 52);
+            $display("%0t\t%d\t%0d\t->\t%d\t%0d", $time, current, current % 52, next, next % 52);
             current <= next;
         end
 
