@@ -1,4 +1,4 @@
-addi $11, $0, 5
+addi $11, $0, 0
 addi $10, $0, 0
 loop:
 blt $11, $10, quit_loop
