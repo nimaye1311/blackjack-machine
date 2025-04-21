@@ -7,7 +7,7 @@
 - [x] Verify DIV outputs quotient (default) via testbench
 
 ## ✅ VGA + Sprites
-- [ ] Generate/collect sprites for cards 1–13 (ignore suits)
+- [x] Generate/collect sprites for cards 1–13 (ignore suits). Size is 75 px wide, 105 px tall
 - [ ] Use `PicToCSV.py` and `CSVToMem.py` to create `sprites.mem`
 - [ ] Implement wrapper logic:
   - [ ] Detect store to `16($4)` for new card
