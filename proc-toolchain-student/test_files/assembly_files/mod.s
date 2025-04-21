@@ -14,5 +14,6 @@ div $r12, $r1, $r5
 div $r13, $r1, $r6        
 div $r14, $r1, $r7 
 div $r15, $r1, $r8
+div $r16, $r1, $r15
 nop
 nop

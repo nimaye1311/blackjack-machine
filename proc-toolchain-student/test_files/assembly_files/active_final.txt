@@ -41,3 +41,4 @@ pre_sort
 setx_bypass
 sort
 wrong_bypass
+rand
