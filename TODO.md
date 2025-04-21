@@ -2,9 +2,9 @@
 
 ## ✅ MIPS Logic + ISA Design
 - [x] Finalize RANDOM instruction implementation in the ALU (XORSHIFT)
-- [ ] Add RANDOM opcode handling in control unit & datapath
-- [ ] Use DIV instead of MOD (encode cards as 1–52)
-- [ ] Verify DIV outputs quotient (default) via testbench
+- [x] Add RANDOM opcode handling in control unit & datapath
+- [x] Use DIV instead of MOD (encode cards as 1–52)
+- [x] Verify DIV outputs quotient (default) via testbench
 
 ## ✅ VGA + Sprites
 - [ ] Generate/collect sprites for cards 1–13 (ignore suits)
