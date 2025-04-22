@@ -2,8 +2,10 @@
 module VGAController(     
 	input clk, 			// 100 MHz System Clock
 	input reset, 		// Reset Signal
+	input [31:0] cardIndex,	// Card index to draw
 	output hSync, 		// H Sync Signal
 	output vSync, 		// Veritcal Sync Signal
+	output [31:0] RAMaddr,	// Address to query
 	output[3:0] VGA_R,  // Red Signal Bits
 	output[3:0] VGA_G,  // Green Signal Bits
 	output[3:0] VGA_B  // Blue Signal Bits
@@ -25,6 +27,9 @@ module VGAController(
 	wire active, screenEnd;
 	wire[9:0] x;
 	wire[8:0] y;
+
+	wire[9:0] left_x;
+	wire[8:0] top_y;
 	
 	VGATimingGenerator #(
 		.HEIGHT(VIDEO_HEIGHT), // Use the standard VGA Values
@@ -41,7 +46,7 @@ module VGAController(
 
 	// Image Data to Map Pixel Location to Color Address
 	localparam 
-		PIXEL_COUNT = VIDEO_WIDTH*VIDEO_HEIGHT, 	             // Number of pixels on the screen
+		PIXEL_COUNT = 102375, 	             					 // Number of pixels in sprite sheet
 		PIXEL_ADDRESS_WIDTH = $clog2(PIXEL_COUNT) + 1,           // Use built in log2 command
 		BITS_PER_COLOR = 12, 	  								 // Nexys A7 uses 12 bits/color
 		PALETTE_COLOR_COUNT = 256, 								 // Number of Colors available
@@ -49,7 +54,14 @@ module VGAController(
 
 	wire[PIXEL_ADDRESS_WIDTH-1:0] imgAddress;  	 // Image address for the image data
 	wire[PALETTE_ADDRESS_WIDTH-1:0] colorAddr; 	 // Color address for the color palette
-	assign imgAddress = x + 640*y;				 // Address calculated coordinate
+
+	wire [31:0] cardNumber;
+	assign cardNumber = x/95;
+	assign left_x = cardNumber * 85 + 10;
+	assign top_y = 9'd20;
+	assign RAMaddr = 16 + cardNumber;
+
+	assign imgAddress = (x - left_x) + ((y - top_y) * 85) + 7875 * (cardIndex - 1); // Calculate the address in the image data
 
 	RAM #(		
 		.DEPTH(PIXEL_COUNT), 				     // Set RAM depth to contain every pixel
@@ -63,7 +75,7 @@ module VGAController(
 		.wEn(1'b0)); 						 // We're always reading
 
 	// Color Palette to Map Color Address to 12-Bit Color
-	wire[BITS_PER_COLOR-1:0] colorData; // 12-bit color data at current pixel
+	wire[BITS_PER_COLOR-1:0] colorDataCard; // 12-bit color data at current pixel
 
 	RAM #(
 		.DEPTH(PALETTE_COLOR_COUNT), 		       // Set depth to contain every color		
@@ -73,9 +85,27 @@ module VGAController(
 	ColorPalette(
 		.clk(clk), 							   	   // Rising edge of the 100 MHz clk
 		.addr(colorAddr),					       // Address from the ImageData RAM
-		.dataOut(colorData),				       // Color at current pixel
+		.dataOut(colorDataCard),				       // Color at current pixel
 		.wEn(1'b0)); 						       // We're always reading
-	
+
+	wire [2:0] writeType; // 100 = cardWrite, 111 = controllerWrite, 001 = winScreenWrite, 010 = lossScreenWrite, 000 = whiteScreen
+
+	assign writeType[0] = ((245 <= x) && (x <= 394) && (400 <= y) && (y < 450)); // || is WINSCREEN
+	assign writeType[1] = ((245 <= x) && (x <= 394) && (400 <= y) && (y < 450)); // || is LOSSSCREEN
+	assign writeType[2] = ((245 <= x) && (x <= 394) && (400 <= y) && (y < 450)) || ((left_x <= x) && (x <= left_x+74) && (top_y <= y) && (y <= top_y+104));
+
+	mux_8_12bit chooseWriteType(
+		.out(colorData),
+		.select(writeType),
+		.in0(12'hfff), // whiteScreen
+		.in1(12'h000), // winScreenWrite
+		.in2(12'h000), // lossScreenWrite
+		.in3(12'hfff), // UNUSED
+		.in4(colorDataCard), // cardWrite
+		.in5(12'hfff), // UNUSED
+		.in6(12'hfff), // UNUSED
+		.in7(12'h000)  // controllerWrite
+	);
 
 	// Assign to output color from register if active
 	wire[BITS_PER_COLOR-1:0] colorOut; 			  // Output color 

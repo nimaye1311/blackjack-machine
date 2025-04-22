@@ -110,11 +110,15 @@ module Wrapper (
 	RAM ProcMem(.clk(clock), 
 		.wEn(mwe), 
 		.addr(memAddr[11:0]), 
+		.addr2(memAddr2[11:0]),
 		.dataIn(memDataIn), 
-		.dataOut(memDataOut));
+		.dataOut(memDataOut),
+		.dataOut2(cardIndex));
 		
 	VGAController VGA_display(     
 	.clk(clock25mhz), 			// 100 MHz System Clock
+	.RAMaddr(memAddr2),	// Address to query
+	.cardIndex(cardIndex),	// Card index to query
 	.reset(reset), 		// Reset Signal
 	.hSync(VGA_HS), 		// H Sync Signal
 	.vSync(VGA_VS), 		// Veritcal Sync Signal
