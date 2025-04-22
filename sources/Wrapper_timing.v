@@ -55,7 +55,7 @@ module Wrapper (
 	wire[4:0] rd, rs1, rs2;
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
-		memAddr, memDataIn, memDataOut, q_dmem, data;
+		memAddr, memDataIn, memDataOut, q_dmem, data, memAddr2, cardIndex;
     reg [15:0] SW_Q, SW_M;  
     
     wire io_read, io_write;

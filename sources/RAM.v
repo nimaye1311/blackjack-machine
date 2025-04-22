@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module RAM #( parameter DATA_WIDTH = 32, ADDRESS_WIDTH = 12, DEPTH = 4096) (
+module RAM #( parameter DATA_WIDTH = 32, ADDRESS_WIDTH = 12, DEPTH = 4096, MEMFILE = "") (
     input wire                     clk,
     input wire                     wEn,
     input wire [ADDRESS_WIDTH-1:0] addr,
@@ -15,9 +15,9 @@ module RAM #( parameter DATA_WIDTH = 32, ADDRESS_WIDTH = 12, DEPTH = 4096) (
         for (i = 0; i < DEPTH; i = i + 1) begin
             MemoryArray[i] <= 0;
         end
-        // if(MEMFILE > 0) begin
-        //     $readmemh(MEMFILE, MemoryArray);
-        // end
+         if(MEMFILE > 0) begin
+             $readmemh(MEMFILE, MemoryArray);
+         end
     end
     
     always @(posedge clk) begin
@@ -25,11 +25,8 @@ module RAM #( parameter DATA_WIDTH = 32, ADDRESS_WIDTH = 12, DEPTH = 4096) (
             MemoryArray[addr] <= dataIn;
         end else begin
             dataOut <= MemoryArray[addr];
+            dataOut2 <= MemoryArray[addr2];
         end
     end
 
-    always @(posedge clk) begin
-        dataOut2 <= MemoryArray[addr2];
-    end
-    
 endmodule

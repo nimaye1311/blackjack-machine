@@ -1,0 +1,20 @@
++======================+====================+=====================================================+
+| Launch Setup Clock   | Launch Hold Clock  | Pin                                                 |
++======================+====================+=====================================================+
+| clk_out2_clk_wiz_0   | clk_out2_clk_wiz_0 | ProcMem/MemoryArray_reg_2/ADDRBWRADDR[3]            |
+| clk_out2_clk_wiz_0   | clk_out2_clk_wiz_0 | ProcMem/MemoryArray_reg_0/ADDRBWRADDR[3]            |
+| clk_out2_clk_wiz_0   | clk_out2_clk_wiz_0 | ProcMem/MemoryArray_reg_1/ADDRBWRADDR[3]            |
+| clk_out2_clk_wiz_0   | clk_out2_clk_wiz_0 | ProcMem/MemoryArray_reg_3/ADDRBWRADDR[3]            |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[61].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[59].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[60].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[58].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/multiply/AQ/d_flip_flop[53].dff/q_reg/D |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[55].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[53].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/multiply/AQ/d_flip_flop[54].dff/q_reg/D |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/multiply/AQ/d_flip_flop[49].dff/q_reg/D |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/divide/AQ/d_flip_flop[54].dff/q_reg/D   |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/multiply/AQ/d_flip_flop[50].dff/q_reg/D |
+| clk_out1_clk_wiz_0_1 | clk_out1_clk_wiz_0 | CPU/md_unit/multiply/AQ/d_flip_flop[51].dff/q_reg/D |
++----------------------+--------------------+-----------------------------------------------------+

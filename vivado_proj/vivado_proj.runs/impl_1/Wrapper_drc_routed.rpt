@@ -1,14 +1,14 @@
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Apr 15 18:25:09 2025
-| Host         : P1-08 running 64-bit major release  (build 9200)
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Apr 22 12:48:44 2025
+| Host         : Nimaye-PC running 64-bit major release  (build 9200)
 | Command      : report_drc -file Wrapper_drc_routed.rpt -pb Wrapper_drc_routed.pb -rpx Wrapper_drc_routed.rpx
 | Design       : Wrapper
 | Device       : xc7a100tcsg324-1
 | Speed File   : -1
 | Design State : Fully Routed
----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 Report DRC
 
@@ -23,20 +23,18 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
            Ruledeck: default
-             Max violations: <unlimited>
-             Violations found: 45
-+-----------+----------+-----------------------------------------------------+------------+
-| Rule      | Severity | Description                                         | Violations |
-+-----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| CHECK-3   | Warning  | Report rule limit reached                           | 1          |
-| DPIP-1    | Warning  | Input pipelining                                    | 2          |
-| DPOP-1    | Warning  | PREG Output pipelining                              | 1          |
-| DPOP-2    | Warning  | MREG Output pipelining                              | 1          |
-| DPREG-4   | Warning  | DSP48E1_PregDynOpmodeZmuxP:                         | 1          |
-| REQP-1839 | Warning  | RAMB36 async control check                          | 20         |
-| REQP-1840 | Warning  | RAMB18 async control check                          | 18         |
-+-----------+----------+-----------------------------------------------------+------------+
+             Max checks: <unlimited>
+             Checks found: 26
++-----------+----------+-----------------------------------------------------+--------+
+| Rule      | Severity | Description                                         | Checks |
++-----------+----------+-----------------------------------------------------+--------+
+| CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
+| CHECK-3   | Warning  | Report rule limit reached                           | 1      |
+| PDRC-134  | Warning  | SLICE_PairEqSame_B6B5_WARN                          | 1      |
+| PDRC-136  | Warning  | SLICE_PairEqSame_C6C5_WARN                          | 1      |
+| PDRC-146  | Warning  | SLICE_PairEqSame_D6D5_WARN                          | 2      |
+| REQP-1839 | Warning  | RAMB36 async control check                          | 20     |
++-----------+----------+-----------------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -58,29 +56,24 @@ Report rule limit reached
 REQP-1839 rule limit reached: 20 violations have been found.
 Related violations: <none>
 
-DPIP-1#1 Warning
-Input pipelining  
-DSP VGA_display/imgAddress input VGA_display/imgAddress/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+PDRC-134#1 Warning
+SLICE_PairEqSame_B6B5_WARN  
+Luts B6LUT and B5LUT in use in site SLICE_X7Y93 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
-DPIP-1#2 Warning
-Input pipelining  
-DSP VGA_display/imgAddress input VGA_display/imgAddress/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+PDRC-136#1 Warning
+SLICE_PairEqSame_C6C5_WARN  
+Luts C6LUT and C5LUT in use in site SLICE_X7Y93 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
-DPOP-1#1 Warning
-PREG Output pipelining  
-DSP VGA_display/imgAddress output VGA_display/imgAddress/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+PDRC-146#1 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X8Y104 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
-DPOP-2#1 Warning
-MREG Output pipelining  
-DSP VGA_display/imgAddress multiplier stage VGA_display/imgAddress/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPREG-4#1 Warning
-DSP48E1_PregDynOpmodeZmuxP:  
-The DSP48E1 cell VGA_display/imgAddress with the given dynamic OPMODE[6:0] connections may lead to an unregistered asynchronous feedback path without the PREG attribute enabled. Please refer to the user guide and if one of the internal P feedback opmodes is possible for this design the PREG attribute must be set to 1, currently set to 0
+PDRC-146#2 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X8Y95 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 REQP-1839#1 Warning
@@ -181,96 +174,6 @@ Related violations: <none>
 REQP-1839#20 Warning
 RAMB36 async control check  
 The RAMB36E1 InstMem/dataOut_reg_1 has an input control pin InstMem/dataOut_reg_1/ADDRARDADDR[9] (net: InstMem/sel[6]) which is driven by a register (CPU/pc_latch/dffe_gen[6].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#1 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[10] (net: ProcMem/MemoryArray_reg_0[6]) which is driven by a register (CPU/xm_output/dffe_gen[6].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#2 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[11] (net: ProcMem/MemoryArray_reg_0[7]) which is driven by a register (CPU/xm_output/dffe_gen[7].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#3 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[4] (net: ProcMem/MemoryArray_reg_0[0]) which is driven by a register (CPU/xm_output/dffe_gen[0].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#4 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[5] (net: ProcMem/MemoryArray_reg_0[1]) which is driven by a register (CPU/xm_output/dffe_gen[1].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#5 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[6] (net: ProcMem/MemoryArray_reg_0[2]) which is driven by a register (CPU/xm_output/dffe_gen[2].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#6 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[7] (net: ProcMem/MemoryArray_reg_0[3]) which is driven by a register (CPU/xm_output/dffe_gen[3].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#7 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[8] (net: ProcMem/MemoryArray_reg_0[4]) which is driven by a register (CPU/xm_output/dffe_gen[4].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#8 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/ADDRARDADDR[9] (net: ProcMem/MemoryArray_reg_0[5]) which is driven by a register (CPU/xm_output/dffe_gen[5].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#9 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[0] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[27].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#10 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[0] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[28].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#11 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[0] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[29].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#12 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[0] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[30].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#13 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[0] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[31].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#14 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[1] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[27].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#15 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[1] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[28].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#16 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[1] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[29].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#17 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[1] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[30].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#18 Warning
-RAMB18 async control check  
-The RAMB18E1 ProcMem/MemoryArray_reg has an input control pin ProcMem/MemoryArray_reg/WEA[1] (net: ProcMem/WEA[0]) which is driven by a register (CPU/xm_insn/dffe_gen[31].dff/q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 
