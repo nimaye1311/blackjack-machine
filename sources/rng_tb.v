@@ -28,7 +28,7 @@ module rng_tb;
         // Generate 20 values
         for (i = 0; i < 100; i = i + 1) begin
             @(posedge clk);
-            $display("%0t\t%d\t%0d\t->\t%d\t%0d", $time, current, current % 52, next, next % 52);
+            $display("%0t\t%d\t%0d\t->\t%d\t%0d", $time, current, ((current % 52) % 13) + 1, next, ((next % 52) % 13) + 1);
             current <= next;
         end
 

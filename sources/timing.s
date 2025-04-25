@@ -1,19 +1,125 @@
-main:
-	addi $s0, $0, 10
-	addi $t0, $0, 16
-	addi $t1, $0, 4
-	sw $t1, 0($t1)
-	jal read_mem
-	add $s1, $v0, $0
-	mul $a0, $s1, $s0
-	jal write_mem
+### REGISTERS ###
+# $1: CPU # cards drawn
+# $2: CPU total
+# $3: total # cards drawn
+# $4: player # cards drawn
+# $5: player total
+# $6: const. value 13
+# $7: const. value 52
+# $29: const. value 21
+# Mem[15]: Random seed location
+# Mem[16] - Mem[25]: All cards modulo 13, first 5 are player cards
+# Mem[26] - Mem[35]: All cards from 0-51
+
+reset:
+	addi $1, $0, 0 # CPU # cards drawn
+	addi $2, $0, 0 # CPU total
+	addi $3, $0, 0 # total # cards drawn
+	addi $4, $0, 0 # player # cards drawn
+	addi $5, $0, 0 # player total
+	addi $6, $0, 13 # const. value 13
+	addi $7, $0, 52 # const. value 52
+	addi $10, $0, 0 # index for all cards array
+	addi $11, $0, 8
+clear_mem:
+	sw $1, 16($10) # clear cards arr
+	sw $1, 26($10) # clear cards arr
+	blt $11, $10, draw_2_for_player
+	addi $10, $10, 1
+	j clear_mem
+
+# JUMPS HERE WHEN RESET OVER TO DRAW INIT CARDS FOR PLAYER
+draw_2_for_player:
+	jal draw_card # draws a random card and saves in $11
+	add $5, $5, $11
+	sw $11, 16($4) # save drawn card in player cards array	
+	addi $4, $4, 1 # increment player # cards drawn
+	jal draw_card # draws a random card and saves in $11
+	add $5, $5, $11
+	sw $11, 16($4)
+	addi $4, $4, 1 # increment player # cards drawn
 	j main
 
-write_mem:
-	sw $a0, 4097($0) # want to write IO data, so write to 4097, IO data in $a0
+draw_card:
+	lw $11, 15($0) # load random seed
+	bne $11, $0, non_zero_seed
+	addi $11, $0, 1 # if seed is 0, set it to 1
+non_zero_seed:
+	nop
+	nop
+	nop
+	rand $11, $11, 0
+	nop
+	nop
+	nop
+	sw $11, 15($0) # save random seed
+	div $11, $11, $7 # take modulo with respect to $7 = 52
+	nop
+	nop
+	nop
+	nop
+	addi $17, $0, -1
+	addi $19, $0, 35
+loop_1:
+	addi $17, $17, 1 # increment index
+	addi $16, $17, 26 # get address of all cards array
+	blt $19, $16, done_loop 
+	lw $18, 0($16) # load card from all cards array
+	bne $18, $11, loop_1 # if card != drawn card, continue
+	j draw_card # else draw again
+done_loop:
+	sw $11, 26($3) # save drawn card in cards array
+	addi $3, $3, 1 # increment total # cards drawn
+	div $11, $11, $6 # take modulo with respect to $6 = 13
+	nop
+	nop
+	nop
+	nop
+	nop
+	addi $11, $11, 1 # increment drawn card bc we need 1-13, not 0-12
+	sw $11, 1($0)
 	jr $ra
 
 read_mem:
-	lw $v0, 4096($0) # want to read IO data, so write to 4096, IO data saved in $v0
+	lw $20, 4096($0)
 	jr $ra
 
+main:
+	jal read_mem
+	addi $21, $0, 1	
+	bne $20, $21, no_BTNU_pressed
+	jal draw_card # draws a random card and saves in $11
+	add $5, $5, $11
+	sw $11, 16($4) # save drawn card in player cards array	
+	addi $4, $4, 1 # increment player # cards drawn
+	addi $22, $0, 1 
+	sll $22, $22, 23 # get 2^23 cycles of stall (approx 1 sec) (number of cyces in $22)
+	jal delay # delay for 1 sec
+#   blt $29, $5, PLAYER_LOST
+no_BTNU_pressed:
+	addi $21, $21, 1
+	bne $20, $21, no_BTND_pressed
+	## LOGIC FOR CPU TURN ##
+	addi $21, $0, 0 
+	bne $24, $21, no_BTND_pressed # If CPU Turn started, then don't go back to CPU tuirn
+CPU_turn:
+	addi $24, $0, 1 # FLAG THAT CPU TURN HAS STARTED
+	jal draw_card # draws a random card and saves in $11
+	addi $1, $1, 0 # reset CPU # cards drawn
+	add $2, $2, $11 # add to CPU total
+	sw $11, 21($1) # save drawn card in CPU cards array
+	addi $1, $1, 1 # increment CPU # cards drawn
+	addi $22, $0, 1
+	sll $22, $22, 24 # get 2^24 cycles of stall (approx 1 sec) (number of cyces in $22)
+	jal delay # delay for 1 sec
+	addi $25, $0, 17
+	blt $2, $25, CPU_turn # if CPU total < 17, draw again
+no_BTND_pressed:	
+	j main
+
+delay:
+	addi $23, $0, 0
+loop_2:
+	addi $23, $23, 1
+	blt $23, $22, loop_2
+	jr $ra

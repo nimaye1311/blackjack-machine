@@ -40,7 +40,7 @@ module div(data_operandA, data_operandB,
 
     assign remainder = restore ? restored_remainer : AQ_out[63:32];
 
-    assign data_result = (data_operandA[31] ^ data_operandB[31]) ? DataResultNeg : remainder;
+    assign data_result = remainder;
     assign data_exception = ~(|data_operandB);
 
 endmodule

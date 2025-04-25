@@ -1,5 +1,5 @@
 nop
-addi $r1, $r0, 29        
+addi $r1, $r0, -29        
 addi $r2, $r0, 1
 addi $r3, $r0, 2
 addi $r4, $r0, 3

@@ -21,7 +21,7 @@
  * 
  * You must change line 36 to add the memory file of the test you created using the assembler
  * For example, you would add sample inside of the quotes on line 38 after assembling sample.s
- *
+ * ff
  **/
 
 module Wrapper (
@@ -39,43 +39,56 @@ module Wrapper (
 	output[3:0] VGA_B,  // Blue Signal Bits
     output reg [15:0] LED);
     
-    wire clock40mhz, clock25mhz;
+    wire clock25mhz;
     wire locked;
     
     clk_wiz_0 pll(
-    .clk_out1(clock40mhz),
-    .clk_out2(clock25mhz),
+    .clk_out1(clock25mhz),
     .reset(1'b0),
     .clk_in1(clk_100mhz));
 
     
     wire clock;
-    assign clock = clock40mhz;
+    assign clock = clock25mhz;
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
-		memAddr, memDataIn, memDataOut, q_dmem, data;
+		memAddr, memDataIn, memDataOut, q_dmem, data, memAddr2, cardIndex;
     reg [15:0] SW_Q, SW_M;  
+    wire[15:0] LED_out;
     
     wire io_read, io_write;
     
     assign io_read = (memAddr == 32'd4096) ? 1'b1: 1'b0;
-    assign io_write = (memAddr == 32'd4097) ? 1'b1: 1'b0;
-     always @(negedge clock) begin
-           SW_M <= SW;
-           SW_Q <= SW_M; 
-       end
+    assign io_write = (memAddr == 32'd1) ? 1'b1: 1'b0;
+//     always @(negedge clock) begin
+//           SW_M <= SW;
+//           SW_Q <= SW_M; 
+//       end
        
-       always @(posedge clock) begin
-           if (io_write == 1'b1) begin
-               LED <= memDataIn[15:0];
-           end else begin
-               LED <= LED;
-           end
-       end
-    assign q_dmem = (io_read == 1'b1) ? SW_Q : memDataOut;
-	// ADD YOUR MEMORY FILE HERE
+//       always @(posedge clock) begin
+//           if (io_write == 1'b1) begin
+//               LED <= memDataIn[15:0];
+//           end else begin
+//               LED <= LED;
+//           end
+//       end
+    always @(posedge clock) begin
+        if (io_write) begin
+            LED <= memDataIn;
+        end else begin
+            LED <= LED;
+        end
+    end
+
+    wire[1:0] io_type;
+    
+    assign io_type[1] = BTNU;
+    assign io_type[0] = BTND;
+    
+    assign q_dmem = (io_read == 1'b1 && (io_type[1] ^ io_type[0])) ? (io_type[1] ? 1 : 2) : memDataOut; // Writes 1 if BTNU, 2 if BTND
+	// ADD YOUR MEMORY FILE HERE 
 	localparam INSTR_FILE = "timing";
 	
 	// Main Processing Unit
@@ -124,7 +137,8 @@ module Wrapper (
 	.vSync(VGA_VS), 		// Veritcal Sync Signal
 	.VGA_R(VGA_R),  // Red Signal Bits
 	.VGA_G(VGA_G),  // Green Signal Bits
-	.VGA_B(VGA_B)  // Blue Signal Bits
+	.VGA_B(VGA_B),  // Blue Signal Bits
+	.LED_out(LED_out) // Debugging LED output
 	);
 
 

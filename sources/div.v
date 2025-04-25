@@ -10,6 +10,9 @@ module div(data_operandA, data_operandB,
 
     wire [31:0] Aneg, Bneg, DataResultNeg;
     wire [31:0] A, B;
+    wire [31:0] restored_remainer, remainder;
+
+    wire restore;
 
     divpos_to_neg negA(.A(data_operandA), .Out(Aneg));
     divpos_to_neg negB(.A(data_operandB), .Out(Bneg));
@@ -31,7 +34,13 @@ module div(data_operandA, data_operandB,
 
     reg_64 AQ(.q(AQ_out), .d(AQ_in), .clock(clock), .en(1'b1), .clr(ctrl_DIV));
 
-    assign data_result = (data_operandA[31] ^ data_operandB[31]) ? DataResultNeg : AQ_out[63:32];
+    thirty_two_bit_adder adder2(.A(AQ_out[63:32]), .B(B), .sub(1'b0), .sum(restored_remainer), .ovf());
+
+    assign restore = (AQ_out[63] == 1'b1) ? 1'b1 : 1'b0;
+
+    assign remainder = restore ? restored_remainer : AQ_out[63:32];
+
+    assign data_result = remainder;
     assign data_exception = ~(|data_operandB);
 
 endmodule

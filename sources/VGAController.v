@@ -8,11 +8,12 @@ module VGAController(
 	output [31:0] RAMaddr,	// Address to query
 	output[3:0] VGA_R,  // Red Signal Bits
 	output[3:0] VGA_G,  // Green Signal Bits
-	output[3:0] VGA_B  // Blue Signal Bits
+	output[3:0] VGA_B,  // Blue Signal Bits
+	output[15:0] LED_out
 	);
 	
 	// Lab Memory Files Location
-	localparam FILES_PATH = "C:/Users./ng215/Desktop/ece350_final_project-main/sources/";
+	localparam FILES_PATH = "C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/";
 
 	// Clock divider 100 MHz -> 25 MHz
 	wire clk25; // 25MHz clock
@@ -53,17 +54,36 @@ module VGAController(
 		PALETTE_ADDRESS_WIDTH = $clog2(PALETTE_COLOR_COUNT) + 1; // Use built in log2 Command
 
 	wire[PIXEL_ADDRESS_WIDTH-1:0] imgAddress;  	 // Image address for the image data
-	wire[PALETTE_ADDRESS_WIDTH-1:0] colorAddr; 	 // Color address for the color palette
+	wire[PALETTE_ADDRESS_WIDTH-1:0] colorAddr, colorBTNAddr; 	 // Color address for the color palette
 
-	wire [31:0] cardNumber;
-	assign cardNumber = x/95;
-	assign left_x = cardNumber * 85 + 10;
-	assign top_y = 9'd20;
-	assign RAMaddr = 16 + cardNumber;
+	reg [31:0] cardNumber;
+	reg [2:0] prev_x_shifted;  // 3 bits is enough
+	wire isCardRegion, isBTNRegion;
+	
+	always @(negedge clk) begin
+	
+        if ((x >> 7) + 5*(y >> 7) != prev_x_shifted) begin
+            cardNumber <= (x >> 7) + 5*(y >> 7);
+        end
+        
+        prev_x_shifted <= (x >> 7) + 5*(y >> 7);
+    end 
+    
+	assign left_x = (cardNumber > 4) ? ((cardNumber - 5) * 128 + 20) : (cardNumber * 128 + 20);
+	assign top_y = (cardNumber > 4) ? 148 : 20;
+	assign RAMaddr = 16 + cardNumber; // RAM[16] = CardIndex[0], RAM[17] = CardIndex[1]...
+	assign isCardRegion = ((left_x <= x) && (x <= left_x+74) && (top_y <= y) && (y <= top_y+104));
+    assign isBTNRegion = ((200 <= x) && (x <= 439) && (300 <= y) && (y < 450));
+    
+    // DEBUG BLOCK
+    assign LED_out[4:0] = ((y == 170) && (x == 40)) ? cardNumber : 0;
+    assign LED_out[5] = ((y == 170) && (x == 40)) ? isCardRegion : 0;
+    assign LED_out[10:6] = ((y == 170) && (x == 40)) ? left_x : 0;
+    assign LED_out[15:11] = ((y == 170) && (x == 40)) ? top_y[8:4] : 0;
 
-	assign imgAddress = (x - left_x) + ((y - top_y) * 85) + 7875 * (cardIndex - 1); // Calculate the address in the image data
+	assign imgAddress = (x - left_x) + ((y - top_y) * 75) + 7875 * cardIndex; // Calculate the address in the image data s
 
-	RAM #(		
+	ROM #(		
 		.DEPTH(PIXEL_COUNT), 				     // Set RAM depth to contain every pixel
 		.DATA_WIDTH(PALETTE_ADDRESS_WIDTH),      // Set data width according to the color palette
 		.ADDRESS_WIDTH(PIXEL_ADDRESS_WIDTH),     // Set address with according to the pixel count
@@ -71,11 +91,11 @@ module VGAController(
 	ImageData(
 		.clk(clk), 						 // Falling edge of the 100 MHz clk
 		.addr(imgAddress),					 // Image data address
-		.dataOut(colorAddr),				 // Color palette address
-		.wEn(1'b0)); 						 // We're always reading
+		.dataOut(colorAddr)); 						 // We're always reading
 
 	// Color Palette to Map Color Address to 12-Bit Color
-	wire[BITS_PER_COLOR-1:0] colorDataCard; // 12-bit color data at current pixel
+	wire[BITS_PER_COLOR-1:0] colorDataCard, colorDataBTN; // 12-bit color data at current pixel
+	wire[BITS_PER_COLOR-1:0] colorData, colorBTN;
 
 	RAM #(
 		.DEPTH(PALETTE_COLOR_COUNT), 		       // Set depth to contain every color		
@@ -87,12 +107,38 @@ module VGAController(
 		.addr(colorAddr),					       // Address from the ImageData RAM
 		.dataOut(colorDataCard),				       // Color at current pixel
 		.wEn(1'b0)); 						       // We're always reading
-
+		
+	wire[15:0] imgBTNAddress;
+	assign imgBTNAddress = (x-200) + 240*(y-300);
+	
+	RAM #(		
+		.DEPTH(36000), 				     // Set RAM depth to contain every pixel
+		.DATA_WIDTH(PALETTE_ADDRESS_WIDTH),      // Set data width according to the color palette
+		.ADDRESS_WIDTH(16),     // Set address with according to the pixel count
+		.MEMFILE({FILES_PATH, "imageBTN.mem"})) // Memory initialization
+	ImageDataBTN(
+		.clk(clk), 						 // Falling edge of the 100 MHz clk
+		.addr(imgBTNAddress),					 // Image data address
+		.dataOut(colorBTNAddr),				 // Color palette address
+		.wEn(1'b0)); 						 // We're always reading
+		
+	RAM #(
+		.DEPTH(PALETTE_COLOR_COUNT), 		       // Set depth to contain every color		
+		.DATA_WIDTH(BITS_PER_COLOR), 		       // Set data width according to the bits per color
+		.ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),     // Set address width according to the color count
+		.MEMFILE({FILES_PATH, "colorsBTN.mem"}))  // Memory initialization
+	ColorPaletteBTN(
+		.clk(clk), 							   	   // Rising edge of the 100 MHz clk
+		.addr(colorBTNAddr),					       // Address from the ImageData RAM
+		.dataOut(colorBTN),				       // Color at current pixel
+		.wEn(1'b0));						 // We're always reading
+    
+    
 	wire [2:0] writeType; // 100 = cardWrite, 111 = controllerWrite, 001 = winScreenWrite, 010 = lossScreenWrite, 000 = whiteScreen
-
-	assign writeType[0] = ((245 <= x) && (x <= 394) && (400 <= y) && (y < 450)); // || is WINSCREEN
-	assign writeType[1] = ((245 <= x) && (x <= 394) && (400 <= y) && (y < 450)); // || is LOSSSCREEN
-	assign writeType[2] = ((245 <= x) && (x <= 394) && (400 <= y) && (y < 450)) || ((left_x <= x) && (x <= left_x+74) && (top_y <= y) && (y <= top_y+104));
+	    
+    assign writeType[2] = isCardRegion || isBTNRegion;
+    assign writeType[1] = isBTNRegion && !isCardRegion;
+    assign writeType[0] = isBTNRegion && !isCardRegion;
 
 	mux_8_12bit chooseWriteType(
 		.out(colorData),
@@ -101,10 +147,10 @@ module VGAController(
 		.in1(12'h000), // winScreenWrite
 		.in2(12'h000), // lossScreenWrite
 		.in3(12'hfff), // UNUSED
-		.in4(colorDataCard), // cardWrite
+		.in4((imgAddress < 0) ? 12'hfff : colorDataCard), // cardWrite
 		.in5(12'hfff), // UNUSED
 		.in6(12'hfff), // UNUSED
-		.in7(12'h000)  // controllerWrite
+		.in7(colorBTN)  // controllerWrite
 	);
 
 	// Assign to output color from register if active

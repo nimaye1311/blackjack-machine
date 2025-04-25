@@ -25,12 +25,12 @@ img = file.quantize(256)
 pixels = img.load()
 pal = [color >> 4 for color in img.getpalette()]
 colors = [pal[3*n:3*(n+1)] for n in range(int(len(pal)/3))]
-with open(path + "colors.csv", "w") as csvFile:
+with open(path + "colors.csv", "w", newline='') as csvFile:
     writer = csv.writer(csvFile)
     for n in range(int(len(colors)/8)):
         writer.writerow([(hex(color[0])[2:] + hex(color[1])[2:] + hex(color[1])[2:]) for color in colors[8 * n:8 * (n + 1)]])
 
-with open(path + "image.csv", "w") as csvFile:
+with open(path + "image.csv", "w", newline='') as csvFile:
     writer = csv.writer(csvFile)
     for y in range(img.size[1]):
         toWrite = []

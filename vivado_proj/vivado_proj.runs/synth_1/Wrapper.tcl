@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.runs/synth_1/Wrapper.tcl"
+  variable script "C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/Wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -55,21 +55,15 @@ if {$::dispatch::connected} {
   }
 }
 
-proc create_report { reportName command } {
-  set status "."
-  append status $reportName ".fail"
-  if { [file exists $status] } {
-    eval file delete [glob $status]
-  }
-  send_msg_id runtcl-4 info "Executing : $command"
-  set retval [eval catch { $command } msg]
-  if { $retval != 0 } {
-    set fp [open $status w]
-    close $fp
-    send_msg_id runtcl-5 warning "$msg"
-  }
-}
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.statsThreshold 360
+set_param chipscope.maxJobs 3
+set_param synth.incrementalSynthesisCache {C:/Users/Nimaye Garodia/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4160-Nimaye-PC/incrSyn}
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -77,71 +71,80 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.cache/wt [current_project]
-set_property parent.project_path C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.xpr [current_project]
+set_property webtalk.parent_dir {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.xpr} [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.cache/ip [current_project]
+set_property ip_output_repo {c:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sprites.mem
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/timing.mem
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/colors.mem
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/ascii.mem
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/image.mem
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/timing.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colors.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/image.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/timing_2.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageBTN.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colorsBTN.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colorsWIN.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageLOSS.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colorsLOSS.mem}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageWIN.mem}
 }
 read_verilog -library xil_defaultlib {
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/RAM.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/ROM.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGAController.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/VGATimingGenerator.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/alu.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/counter.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/dffe_ref.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/div.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/divpos_to_neg.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/eight_bit_adder.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/is_zero.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch_1bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/latch_5bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/mult.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/multdiv.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/multovf.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_2.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_32.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_4.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/mux_8.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/processor.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/reg_64.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/reg_66.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/regfile.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_16bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_1bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_1bit_64b_version.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_2bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_4bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_8bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sll_barrel.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_16bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_1bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_2bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_2bit_66b_version.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_4bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_8bit.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sra_barrel.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/sx.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/tff.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/thirty_two_bit_adder.v
-  C:/Users/ng215/Desktop/ece350_final_project-main/sources/Wrapper_timing.v
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGATimingGenerator.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/alu.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/counter.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/dffe_ref.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/div.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/divpos_to_neg.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/eight_bit_adder.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/is_zero.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/latch.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/latch_1bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/latch_5bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mult.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/multdiv.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/multovf.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_2.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_2_12bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_32.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_4.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_4_12bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_8.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_8_12bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/processor.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/reg_64.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/reg_66.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/regfile.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/rng.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_16bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_1bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_1bit_64b_version.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_2bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_4bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_8bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sll_barrel.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_16bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_1bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_2bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_2bit_66b_version.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_4bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_8bit.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sra_barrel.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/sx.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/tff.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/thirty_two_bit_adder.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v}
 }
-read_ip -quiet C:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/ng215/Desktop/ece350_final_project-main/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet {{C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc}}]
+set_property used_in_implementation false [get_files -all {{c:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc}}]
+set_property used_in_implementation false [get_files -all {{c:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc}}]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -152,8 +155,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/ng215/Desktop/ece350_final_project-main/constraints/master.xdc
-set_property used_in_implementation false [get_files C:/Users/ng215/Desktop/ece350_final_project-main/constraints/master.xdc]
+read_xdc {{C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/constraints/master.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/constraints/master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
@@ -172,7 +175,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef Wrapper.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb"
+generate_parallel_reports -reports { "report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
