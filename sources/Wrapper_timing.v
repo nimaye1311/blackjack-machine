@@ -61,7 +61,7 @@ module Wrapper (
     wire io_read, io_write;
     
     assign io_read = (memAddr == 32'd4096) ? 1'b1: 1'b0;
-    assign io_write = (memAddr == 32'd4) ? 1'b1: 1'b0;
+    assign io_write = (memAddr == 32'd4097) ? 1'b1: 1'b0;
 //     always @(negedge clock) begin
 //           SW_M <= SW;
 //           SW_Q <= SW_M; 
@@ -123,17 +123,13 @@ module Wrapper (
 
 	reg [1:0] winLoss;
 
-	always @(negedge clock) begin
+	always @(posedge clock) begin
 		if (io_write == 1'b1) begin
-			winLoss <= memDataIn;
-			LED[12:0] <= memDataIn;
-			LED[13] <= (memDataIn != 0) ? 1'b1 : 1'b0;
-			LED[14] <= BTNL;
-		end 
-		if (io_read == 1'b1 && (io_type[1] ^ io_type[0]) && (io_type[0])) begin
-		    LED[15] <= 1'b1;
+			winLoss <= memDataIn[1:0];
+			LED <= memDataIn[15:0];
 		end else begin
-		    LED[15] <= 1'b0;
+			winLoss <= winLoss;
+			LED <= LED;
 		end
 	end	
 	

@@ -147,18 +147,20 @@ loop_2:
 
 player_loss:
 	addi $22, $0, 1
-	sw $22, 4($0) # set player loss flag in mem location 4 as 01 (binary)
-	sll $22, $22, 24
-	jal delay
-	sw $0, 4($0) # reset player loss flag in mem location 4
+	sw $22, 4097($0) # set player loss flag in mem location 4 as 01 (binary)
+	addi $22, $0, 1
+	sll $22, $22, 24 # get 2^26 cycles of stall (approx 1 sec) (number of cyces in $22)
+	jal delay # delay for 1 sec
+	sw $0, 4097($0) # reset player loss flag in mem location 4
 	addi $22, $0, 0
 	j reset
 
 player_win:
 	addi $22, $0, 2
-	sw $22, 4($0) # set player loss flag in mem location 4 as 10 (binary)
-	sll $22, $22, 23
-	jal delay
-	sw $0, 4($0) # reset player loss flag in mem location 4
+	sw $22, 4097($0) # set player loss flag in mem location 4 as 10 (binary)
+	addi $22, $0, 1
+	sll $22, $22, 24 # get 2^26 cycles of stall (approx 1 sec) (number of cyces in $22)
+	jal delay # delay for 1 sec
+	sw $0, 4097($0) # reset player loss flag in mem location 4
 	addi $22, $0, 0
 	j reset

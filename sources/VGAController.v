@@ -76,12 +76,6 @@ module VGAController(
 	assign isCardRegion = ((left_x <= x) && (x <= left_x+74) && (top_y <= y) && (y <= top_y+104));
     assign isBTNRegion = ((200 <= x) && (x <= 439) && (300 <= y) && (y < 450));
     
-    // DEBUG BLOCK
-    assign LED_out[4:0] = ((y == 170) && (x == 40)) ? cardNumber : 0;
-    assign LED_out[5] = ((y == 170) && (x == 40)) ? isCardRegion : 0;
-    assign LED_out[10:6] = ((y == 170) && (x == 40)) ? left_x : 0;
-    assign LED_out[15:11] = ((y == 170) && (x == 40)) ? top_y[8:4] : 0;
-
 	assign imgAddress = (x - left_x) + ((y - top_y) * 75) + 7875 * cardIndex; // Calculate the address in the image data s
 
 	ROM_hex #(		
@@ -138,54 +132,56 @@ module VGAController(
     wire [PALETTE_ADDRESS_WIDTH-1:0] colorWIN, colorLOSS;
     wire [BITS_PER_COLOR-1:0] colorWINout, colorLOSSout;
     
-    ROM_hex #(
-        .DEPTH(307200),
-        .DATA_WIDTH(PALETTE_ADDRESS_WIDTH),
-        .ADDRESS_WIDTH(19),
-        .MEMFILE({FILES_PATH, "imageWIN.mem"}))
-    ImageDataWIN(
-        .clk(clk),
-        .addr(WINAddr),
-        .dataOut(colorWIN));
+//    ROM_hex #(
+//        .DEPTH(307200),
+//        .DATA_WIDTH(PALETTE_ADDRESS_WIDTH),
+//        .ADDRESS_WIDTH(19),
+//        .MEMFILE({FILES_PATH, "imageWIN.mem"}))
+//    ImageDataWIN(
+//        .clk(clk),
+//        .addr(WINAddr),
+//        .dataOut(colorWIN));
         
-    RAM #(
-        .DEPTH(PALETTE_COLOR_COUNT),
-        .DATA_WIDTH(BITS_PER_COLOR),
-        .ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),
-        .MEMFILE({FILES_PATH, "colorsWIN.mem"}))
-    ColorDataWIN(
-        .clk(clk),
-        .addr(colorWIN),
-        .dataOut(colorWINout),
-		.wEn(1'b0)); // We're always reading
+//    RAM #(
+//        .DEPTH(PALETTE_COLOR_COUNT),
+//        .DATA_WIDTH(BITS_PER_COLOR),
+//        .ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),
+//        .MEMFILE({FILES_PATH, "colorsWIN.mem"}))
+//    ColorDataWIN(
+//        .clk(clk),
+//        .addr(colorWIN),
+//        .dataOut(colorWINout),
+//		.wEn(1'b0)); // We're always reading
         
-    ROM_hex #(
-        .DEPTH(307200),
-        .DATA_WIDTH(PALETTE_ADDRESS_WIDTH),
-        .ADDRESS_WIDTH(19),
-        .MEMFILE({FILES_PATH, "imageLOSS.mem"}))
-    ImageDataLOSS(
-        .clk(clk),
-        .addr(LOSSAddr),
-        .dataOut(colorLOSS));
+//    ROM_hex #(
+//        .DEPTH(307200),
+//        .DATA_WIDTH(PALETTE_ADDRESS_WIDTH),
+//        .ADDRESS_WIDTH(19),
+//        .MEMFILE({FILES_PATH, "imageLOSS.mem"}))
+//    ImageDataLOSS(
+//        .clk(clk),
+//        .addr(LOSSAddr),
+//        .dataOut(colorLOSS));
         
-    RAM #(
-        .DEPTH(PALETTE_COLOR_COUNT),
-        .DATA_WIDTH(BITS_PER_COLOR),
-        .ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),
-        .MEMFILE({FILES_PATH, "colorsLOSS.mem"}))
-    ColorDataLOSS(
-        .clk(clk),
-        .addr(colorLOSS),
-        .dataOut(colorLOSSout),
-		.wEn(1'b0)); // We're always reading
+//    RAM #(
+//        .DEPTH(PALETTE_COLOR_COUNT),
+//        .DATA_WIDTH(BITS_PER_COLOR),
+//        .ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),
+//        .MEMFILE({FILES_PATH, "colorsLOSS.mem"}))
+//    ColorDataLOSS(
+//        .clk(clk),
+//        .addr(colorLOSS),
+//        .dataOut(colorLOSSout),
+//		.wEn(1'b0)); // We're always reading
 
 	assign winState = winLoss[1] && !winLoss[0];
 	assign lossState = winLoss[0] && !winLoss[1];
     
 	wire [2:0] writeType; // 100 = cardWrite, 111 = controllerWrite, 001 = winScreenWrite, 010 = lossScreenWrite, 000 = whiteScreen
+	
+	assign LED_out = ((writeType == 010) || (writeType == 001)) ? writeType : 0;
 	    
-    assign writeType[2] = isCardRegion || isBTNRegion;
+    assign writeType[2] = (isCardRegion || isBTNRegion) && ~winState && ~lossState; // cardWrite
     assign writeType[1] = (isBTNRegion && !isCardRegion) || winState;
     assign writeType[0] = (isBTNRegion && !isCardRegion) || lossState;
 
@@ -193,8 +189,8 @@ module VGAController(
 		.out(colorData),
 		.select(writeType),
 		.in0(12'hfff), // whiteScreen
-		.in1(colorWINout), // winScreenWrite
-		.in2(colorLOSSout), // lossScreenWrite
+		.in1(12'hf00), // winScreenWrite
+		.in2(12'h0f0), // lossScreenWrite
 		.in3(12'hfff), // UNUSED
 		.in4(colorDataCard), // cardWrite
 		.in5(12'hfff), // UNUSED
