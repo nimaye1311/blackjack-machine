@@ -194,6 +194,9 @@ module VGAController(
 		.in1(12'hf00), // winScreenWrite
 		.in2(12'h0f0), // lossScreenWrite
 		.in3(12'h00f), // UNUSED
+		.in1(12'h0f0), // winScreenWrite
+		.in2(12'hf00), // lossScreenWrite
+		.in3(12'hfff), // UNUSED
 		.in4(colorDataCard), // cardWrite
 		.in5(12'h0ff), // UNUSED
 		.in6(12'hff0), // UNUSED
