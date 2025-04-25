@@ -3,6 +3,7 @@ module VGAController(
 	input clk, 			// 100 MHz System Clock
 	input reset, 		// Reset Signal
 	input [31:0] cardIndex,	// Card index to draw
+	input [1:0] winLoss, // 00 = no win/loss, 01 = win, 10 = loss
 	output hSync, 		// H Sync Signal
 	output vSync, 		// Veritcal Sync Signal
 	output [31:0] RAMaddr,	// Address to query
@@ -47,7 +48,7 @@ module VGAController(
 
 	// Image Data to Map Pixel Location to Color Address
 	localparam 
-		PIXEL_COUNT = 102375, 	             					 // Number of pixels in sprite sheet
+		PIXEL_COUNT = 110250, 	             					 // Number of pixels in sprite sheet
 		PIXEL_ADDRESS_WIDTH = $clog2(PIXEL_COUNT) + 1,           // Use built in log2 command
 		BITS_PER_COLOR = 12, 	  								 // Nexys A7 uses 12 bits/color
 		PALETTE_COLOR_COUNT = 256, 								 // Number of Colors available
@@ -60,7 +61,7 @@ module VGAController(
 	reg [2:0] prev_x_shifted;  // 3 bits is enough
 	wire isCardRegion, isBTNRegion;
 	
-	always @(negedge clk) begin
+	always @(posedge clk) begin
 	
         if ((x >> 7) + 5*(y >> 7) != prev_x_shifted) begin
             cardNumber <= (x >> 7) + 5*(y >> 7);
@@ -83,7 +84,7 @@ module VGAController(
 
 	assign imgAddress = (x - left_x) + ((y - top_y) * 75) + 7875 * cardIndex; // Calculate the address in the image data s
 
-	ROM #(		
+	ROM_hex #(		
 		.DEPTH(PIXEL_COUNT), 				     // Set RAM depth to contain every pixel
 		.DATA_WIDTH(PALETTE_ADDRESS_WIDTH),      // Set data width according to the color palette
 		.ADDRESS_WIDTH(PIXEL_ADDRESS_WIDTH),     // Set address with according to the pixel count
@@ -111,7 +112,7 @@ module VGAController(
 	wire[15:0] imgBTNAddress;
 	assign imgBTNAddress = (x-200) + 240*(y-300);
 	
-	RAM #(		
+	ROM_hex #(		
 		.DEPTH(36000), 				     // Set RAM depth to contain every pixel
 		.DATA_WIDTH(PALETTE_ADDRESS_WIDTH),      // Set data width according to the color palette
 		.ADDRESS_WIDTH(16),     // Set address with according to the pixel count
@@ -119,8 +120,7 @@ module VGAController(
 	ImageDataBTN(
 		.clk(clk), 						 // Falling edge of the 100 MHz clk
 		.addr(imgBTNAddress),					 // Image data address
-		.dataOut(colorBTNAddr),				 // Color palette address
-		.wEn(1'b0)); 						 // We're always reading
+		.dataOut(colorBTNAddr)); 						 // We're always reading
 		
 	RAM #(
 		.DEPTH(PALETTE_COLOR_COUNT), 		       // Set depth to contain every color		
@@ -132,22 +132,71 @@ module VGAController(
 		.addr(colorBTNAddr),					       // Address from the ImageData RAM
 		.dataOut(colorBTN),				       // Color at current pixel
 		.wEn(1'b0));						 // We're always reading
+
+    wire [18:0] WINAddr = x + 640 * y;
+    wire [18:0] LOSSAddr = x + 640 * y;
+    wire [PALETTE_ADDRESS_WIDTH-1:0] colorWIN, colorLOSS;
+    wire [BITS_PER_COLOR-1:0] colorWINout, colorLOSSout;
     
+    ROM_hex #(
+        .DEPTH(307200),
+        .DATA_WIDTH(PALETTE_ADDRESS_WIDTH),
+        .ADDRESS_WIDTH(19),
+        .MEMFILE({FILES_PATH, "imageWIN.mem"}))
+    ImageDataWIN(
+        .clk(clk),
+        .addr(WINAddr),
+        .dataOut(colorWIN));
+        
+    RAM #(
+        .DEPTH(PALETTE_COLOR_COUNT),
+        .DATA_WIDTH(BITS_PER_COLOR),
+        .ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),
+        .MEMFILE({FILES_PATH, "colorsWIN.mem"}))
+    ColorDataWIN(
+        .clk(clk),
+        .addr(colorWIN),
+        .dataOut(colorWINout),
+		.wEn(1'b0)); // We're always reading
+        
+    ROM_hex #(
+        .DEPTH(307200),
+        .DATA_WIDTH(PALETTE_ADDRESS_WIDTH),
+        .ADDRESS_WIDTH(19),
+        .MEMFILE({FILES_PATH, "imageLOSS.mem"}))
+    ImageDataLOSS(
+        .clk(clk),
+        .addr(LOSSAddr),
+        .dataOut(colorLOSS));
+        
+    RAM #(
+        .DEPTH(PALETTE_COLOR_COUNT),
+        .DATA_WIDTH(BITS_PER_COLOR),
+        .ADDRESS_WIDTH(PALETTE_ADDRESS_WIDTH),
+        .MEMFILE({FILES_PATH, "colorsLOSS.mem"}))
+    ColorDataLOSS(
+        .clk(clk),
+        .addr(colorLOSS),
+        .dataOut(colorLOSSout),
+		.wEn(1'b0)); // We're always reading
+
+	assign winState = winLoss[1] && !winLoss[0];
+	assign lossState = winLoss[0] && !winLoss[1];
     
 	wire [2:0] writeType; // 100 = cardWrite, 111 = controllerWrite, 001 = winScreenWrite, 010 = lossScreenWrite, 000 = whiteScreen
 	    
     assign writeType[2] = isCardRegion || isBTNRegion;
-    assign writeType[1] = isBTNRegion && !isCardRegion;
-    assign writeType[0] = isBTNRegion && !isCardRegion;
+    assign writeType[1] = (isBTNRegion && !isCardRegion) || winState;
+    assign writeType[0] = (isBTNRegion && !isCardRegion) || lossState;
 
 	mux_8_12bit chooseWriteType(
 		.out(colorData),
 		.select(writeType),
 		.in0(12'hfff), // whiteScreen
-		.in1(12'h000), // winScreenWrite
-		.in2(12'h000), // lossScreenWrite
+		.in1(colorWINout), // winScreenWrite
+		.in2(colorLOSSout), // lossScreenWrite
 		.in3(12'hfff), // UNUSED
-		.in4((imgAddress < 0) ? 12'hfff : colorDataCard), // cardWrite
+		.in4(colorDataCard), // cardWrite
 		.in5(12'hfff), // UNUSED
 		.in6(12'hfff), // UNUSED
 		.in7(colorBTN)  // controllerWrite

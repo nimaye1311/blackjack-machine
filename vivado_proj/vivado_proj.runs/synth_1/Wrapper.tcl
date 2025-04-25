@@ -56,14 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
 set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache {C:/Users/Nimaye Garodia/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4160-Nimaye-PC/incrSyn}
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -95,6 +89,7 @@ read_mem {
 read_verilog -library xil_defaultlib {
   {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v}
   {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM.v}
+  {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v}
   {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v}
   {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGATimingGenerator.v}
   {C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/alu.v}

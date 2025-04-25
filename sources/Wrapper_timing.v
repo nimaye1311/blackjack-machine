@@ -61,7 +61,7 @@ module Wrapper (
     wire io_read, io_write;
     
     assign io_read = (memAddr == 32'd4096) ? 1'b1: 1'b0;
-    assign io_write = (memAddr == 32'd1) ? 1'b1: 1'b0;
+    assign io_write = (memAddr == 32'd4) ? 1'b1: 1'b0;
 //     always @(negedge clock) begin
 //           SW_M <= SW;
 //           SW_Q <= SW_M; 
@@ -71,16 +71,9 @@ module Wrapper (
 //           if (io_write == 1'b1) begin
 //               LED <= memDataIn[15:0];
 //           end else begin
-//               LED <= LED;
+//               LED <= LED; 3e
 //           end
 //       end
-    always @(posedge clock) begin
-        if (io_write) begin
-            LED <= memDataIn;
-        end else begin
-            LED <= LED;
-        end
-    end
 
     wire[1:0] io_type;
     
@@ -127,10 +120,27 @@ module Wrapper (
 		.dataIn(memDataIn), 
 		.dataOut(memDataOut),
 		.dataOut2(cardIndex));
-		
+
+	reg [1:0] winLoss;
+
+	always @(negedge clock) begin
+		if (io_write == 1'b1) begin
+			winLoss <= memDataIn;
+			LED[12:0] <= memDataIn;
+			LED[13] <= (memDataIn != 0) ? 1'b1 : 1'b0;
+			LED[14] <= BTNL;
+		end 
+		if (io_read == 1'b1 && (io_type[1] ^ io_type[0]) && (io_type[0])) begin
+		    LED[15] <= 1'b1;
+		end else begin
+		    LED[15] <= 1'b0;
+		end
+	end	
+	
 	VGAController VGA_display(     
 	.clk(clock25mhz), 			// 100 MHz System Clock
 	.RAMaddr(memAddr2),	// Address to query
+	.winLoss(winLoss), // 2 bit, win or loss (01 = win, 10 = loss)
 	.cardIndex(cardIndex),	// Card index to query
 	.reset(reset), 		// Reset Signal
 	.hSync(VGA_HS), 		// H Sync Signal

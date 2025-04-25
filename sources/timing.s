@@ -9,7 +9,7 @@
 # $29: const. value 21
 # Mem[15]: Random seed location
 # Mem[16] - Mem[25]: All cards modulo 13, first 5 are player cards
-# Mem[26] - Mem[35]: All cards from 0-51
+# Mem[26] - Mem[35]: All cards from 0-51 that are drawn
 
 reset:
 	addi $1, $0, 0 # CPU # cards drawn
@@ -19,6 +19,7 @@ reset:
 	addi $5, $0, 0 # player total
 	addi $6, $0, 13 # const. value 13
 	addi $7, $0, 52 # const. value 52
+	addi $29, $0, 21 # const. value 21
 	addi $10, $0, 0 # index for all cards array
 	addi $11, $0, 8
 clear_mem:
@@ -31,10 +32,20 @@ clear_mem:
 # JUMPS HERE WHEN RESET OVER TO DRAW INIT CARDS FOR PLAYER
 draw_2_for_player:
 	jal draw_card # draws a random card and saves in $11
+	addi $22, $0, 10
+	blt $11, $22, less_than_10
+	sub $5, $5, $11 # subtract drawn card from player total
+	addi $5, $5, 10 # add 10 to player total
+less_than_10:
 	add $5, $5, $11
 	sw $11, 16($4) # save drawn card in player cards array	
 	addi $4, $4, 1 # increment player # cards drawn
 	jal draw_card # draws a random card and saves in $11
+	addi $22, $0, 10
+	blt $11, $22, less_than_10_2
+	sub $5, $5, $11 # subtract drawn card from player total
+	addi $5, $5, 10 # add 10 to player total
+less_than_10_2:
 	add $5, $5, $11
 	sw $11, 16($4)
 	addi $4, $4, 1 # increment player # cards drawn
@@ -77,7 +88,6 @@ done_loop:
 	nop
 	nop
 	addi $11, $11, 1 # increment drawn card bc we need 1-13, not 0-12
-	sw $11, 1($0)
 	jr $ra
 
 read_mem:
@@ -89,23 +99,31 @@ main:
 	addi $21, $0, 1	
 	bne $20, $21, no_BTNU_pressed
 	jal draw_card # draws a random card and saves in $11
+	addi $22, $0, 10
+	blt $11, $22, less_than_10_3
+	sub $5, $5, $11 # subtract drawn card from player total
+	addi $5, $5, 10 # add 10 to player total
+less_than_10_3:
 	add $5, $5, $11
 	sw $11, 16($4) # save drawn card in player cards array	
 	addi $4, $4, 1 # increment player # cards drawn
 	addi $22, $0, 1 
 	sll $22, $22, 23 # get 2^23 cycles of stall (approx 1 sec) (number of cyces in $22)
+	blt $29, $5, player_loss
 	jal delay # delay for 1 sec
-#   blt $29, $5, PLAYER_LOST
 no_BTNU_pressed:
-	addi $21, $21, 1
+	addi $21, $0, 2
 	bne $20, $21, no_BTND_pressed
-	## LOGIC FOR CPU TURN ##
+## LOGIC FOR CPU TURN ##
 	addi $21, $0, 0 
-	bne $24, $21, no_BTND_pressed # If CPU Turn started, then don't go back to CPU tuirn
+	addi $1, $1, 0
 CPU_turn:
-	addi $24, $0, 1 # FLAG THAT CPU TURN HAS STARTED
 	jal draw_card # draws a random card and saves in $11
-	addi $1, $1, 0 # reset CPU # cards drawn
+	addi $22, $0, 10
+	blt $11, $22, less_than_10_4
+	sub $2, $2, $11 # subtract drawn card from CPU total
+	addi $2, $2, 10 # add 10 to CPU total
+less_than_10_4:
 	add $2, $2, $11 # add to CPU total
 	sw $11, 21($1) # save drawn card in CPU cards array
 	addi $1, $1, 1 # increment CPU # cards drawn
@@ -114,6 +132,9 @@ CPU_turn:
 	jal delay # delay for 1 sec
 	addi $25, $0, 17
 	blt $2, $25, CPU_turn # if CPU total < 17, draw again
+	blt $2, $5, player_win
+	blt $29, $2, player_win
+	j player_loss
 no_BTND_pressed:	
 	j main
 
@@ -123,3 +144,21 @@ loop_2:
 	addi $23, $23, 1
 	blt $23, $22, loop_2
 	jr $ra
+
+player_loss:
+	addi $22, $0, 1
+	sw $22, 4($0) # set player loss flag in mem location 4 as 01 (binary)
+	sll $22, $22, 24
+	jal delay
+	sw $0, 4($0) # reset player loss flag in mem location 4
+	addi $22, $0, 0
+	j reset
+
+player_win:
+	addi $22, $0, 2
+	sw $22, 4($0) # set player loss flag in mem location 4 as 10 (binary)
+	sll $22, $22, 23
+	jal delay
+	sw $0, 4($0) # reset player loss flag in mem location 4
+	addi $22, $0, 0
+	j reset

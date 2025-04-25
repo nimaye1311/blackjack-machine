@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Apr 24 23:33:33 2025
+  **** Start of session at: Fri Apr 25 03:10:17 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -20,13 +20,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 13144
+INFO: [Synth 8-7075] Helper process launched with PID 44500
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 977.020 ; gain = 467.145
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 977.645 ; gain = 468.211
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'winState', assumed default net type 'wire' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:183]
+INFO: [Synth 8-11241] undeclared symbol 'lossState', assumed default net type 'wire' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:184]
 INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:27]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-29568-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-29568-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-30148-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-30148-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/processor.v:20]
 INFO: [Synth 8-6157] synthesizing module 'latch' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/latch.v:1]
 INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/dffe_ref.v:1]
@@ -115,20 +117,20 @@ INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/Nimaye Garodia/iClo
 INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/regfile.v:1]
 INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
-WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ProcMem' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:123]
-WARNING: [Synth 8-7023] instance 'ProcMem' of module 'RAM' has 8 connections declared, but only 7 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:123]
+WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ProcMem' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:116]
+WARNING: [Synth 8-7023] instance 'ProcMem' of module 'RAM' has 8 connections declared, but only 7 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:116]
 INFO: [Synth 8-6157] synthesizing module 'VGAController' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:2]
 INFO: [Synth 8-6157] synthesizing module 'VGATimingGenerator' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGATimingGenerator.v:2]
 	Parameter HEIGHT bound to: 480 - type: integer 
 	Parameter WIDTH bound to: 640 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'VGATimingGenerator' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGATimingGenerator.v:2]
-INFO: [Synth 8-6157] synthesizing module 'ROM__parameterized0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ROM_hex' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
 	Parameter DATA_WIDTH bound to: 9 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 18 - type: integer 
-	Parameter DEPTH bound to: 102375 - type: integer 
+	Parameter DEPTH bound to: 110250 - type: integer 
 	Parameter MEMFILE bound to: 728'b01000011001110100010111101010101011100110110010101110010011100110010111101001110011010010110110101100001011110010110010100100000010001110110000101110010011011110110010001101001011000010010111101101001010000110110110001101111011101010110010001000100011100100110100101110110011001010010111101000100011001010111001101101011011101000110111101110000001011110011001100101101001100100010111101000101010000110100010100100000001100110011010100110000001011110110001001101100011000010110001101101011011010100110000101100011011010110010110101101101011000010110001101101000011010010110111001100101001011110111001101101111011101010111001001100011011001010111001100101111011010010110110101100001011001110110010100101110011011010110010101101101 
-INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/image.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'ROM__parameterized0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM.v:2]
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/image.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_hex' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
 INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 9 - type: integer 
@@ -136,35 +138,68 @@ INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized0' [C:/Users/Nimaye 
 	Parameter MEMFILE bound to: 736'b0100001100111010001011110101010101110011011001010111001001110011001011110100111001101001011011010110000101111001011001010010000001000111011000010111001001101111011001000110100101100001001011110110100101000011011011000110111101110101011001000100010001110010011010010111011001100101001011110100010001100101011100110110101101110100011011110111000000101111001100110010110100110010001011110100010101000011010001010010000000110011001101010011000000101111011000100110110001100001011000110110101101101010011000010110001101101011001011010110110101100001011000110110100001101001011011100110010100101111011100110110111101110101011100100110001101100101011100110010111101100011011011110110110001101111011100100111001100101110011011010110010101101101 
 INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colors.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:20]
 INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
-WARNING: [Synth 8-7071] port 'addr2' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:105]
-WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:105]
-WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:105]
-WARNING: [Synth 8-7071] port 'dataOut2' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:105]
-WARNING: [Synth 8-7023] instance 'ColorPalette' of module 'RAM' has 8 connections declared, but only 4 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:105]
-INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized1' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+WARNING: [Synth 8-7071] port 'addr2' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:106]
+WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:106]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:106]
+WARNING: [Synth 8-7071] port 'dataOut2' of module 'RAM' is unconnected for instance 'ColorPalette' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:106]
+WARNING: [Synth 8-7023] instance 'ColorPalette' of module 'RAM' has 8 connections declared, but only 4 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:106]
+INFO: [Synth 8-6157] synthesizing module 'ROM_hex__parameterized0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
 	Parameter DATA_WIDTH bound to: 9 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 16 - type: integer 
 	Parameter DEPTH bound to: 36000 - type: integer 
 	Parameter MEMFILE bound to: 752'b01000011001110100010111101010101011100110110010101110010011100110010111101001110011010010110110101100001011110010110010100100000010001110110000101110010011011110110010001101001011000010010111101101001010000110110110001101111011101010110010001000100011100100110100101110110011001010010111101000100011001010111001101101011011101000110111101110000001011110011001100101101001100100010111101000101010000110100010100100000001100110011010100110000001011110110001001101100011000010110001101101011011010100110000101100011011010110010110101101101011000010110001101101000011010010110111001100101001011110111001101101111011101010111001001100011011001010111001100101111011010010110110101100001011001110110010101000010010101000100111000101110011011010110010101101101 
-INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageBTN.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized1' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
-WARNING: [Synth 8-7071] port 'addr2' of module 'RAM' is unconnected for instance 'ImageDataBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:119]
-WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ImageDataBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:119]
-WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ImageDataBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:119]
-WARNING: [Synth 8-7071] port 'dataOut2' of module 'RAM' is unconnected for instance 'ImageDataBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:119]
-WARNING: [Synth 8-7023] instance 'ImageDataBTN' of module 'RAM' has 8 connections declared, but only 4 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:119]
-INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized2' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageBTN.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_hex__parameterized0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized1' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 9 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
 	Parameter MEMFILE bound to: 760'b0100001100111010001011110101010101110011011001010111001001110011001011110100111001101001011011010110000101111001011001010010000001000111011000010111001001101111011001000110100101100001001011110110100101000011011011000110111101110101011001000100010001110010011010010111011001100101001011110100010001100101011100110110101101110100011011110111000000101111001100110010110100110010001011110100010101000011010001010010000000110011001101010011000000101111011000100110110001100001011000110110101101101010011000010110001101101011001011010110110101100001011000110110100001101001011011100110010100101111011100110110111101110101011100100110001101100101011100110010111101100011011011110110110001101111011100100111001101000010010101000100111000101110011011010110010101101101 
 INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colorsBTN.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized2' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized1' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
 WARNING: [Synth 8-7071] port 'addr2' of module 'RAM' is unconnected for instance 'ColorPaletteBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:130]
 WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ColorPaletteBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:130]
 WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorPaletteBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:130]
 WARNING: [Synth 8-7071] port 'dataOut2' of module 'RAM' is unconnected for instance 'ColorPaletteBTN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:130]
 WARNING: [Synth 8-7023] instance 'ColorPaletteBTN' of module 'RAM' has 8 connections declared, but only 4 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:130]
+INFO: [Synth 8-6157] synthesizing module 'ROM_hex__parameterized1' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
+	Parameter DATA_WIDTH bound to: 9 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 19 - type: integer 
+	Parameter DEPTH bound to: 307200 - type: integer 
+	Parameter MEMFILE bound to: 752'b01000011001110100010111101010101011100110110010101110010011100110010111101001110011010010110110101100001011110010110010100100000010001110110000101110010011011110110010001101001011000010010111101101001010000110110110001101111011101010110010001000100011100100110100101110110011001010010111101000100011001010111001101101011011101000110111101110000001011110011001100101101001100100010111101000101010000110100010100100000001100110011010100110000001011110110001001101100011000010110001101101011011010100110000101100011011010110010110101101101011000010110001101101000011010010110111001100101001011110111001101101111011101010111001001100011011001010111001100101111011010010110110101100001011001110110010101010111010010010100111000101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageWIN.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_hex__parameterized1' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized2' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 9 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter MEMFILE bound to: 760'b0100001100111010001011110101010101110011011001010111001001110011001011110100111001101001011011010110000101111001011001010010000001000111011000010111001001101111011001000110100101100001001011110110100101000011011011000110111101110101011001000100010001110010011010010111011001100101001011110100010001100101011100110110101101110100011011110111000000101111001100110010110100110010001011110100010101000011010001010010000000110011001101010011000000101111011000100110110001100001011000110110101101101010011000010110001101101011001011010110110101100001011000110110100001101001011011100110010100101111011100110110111101110101011100100110001101100101011100110010111101100011011011110110110001101111011100100111001101010111010010010100111000101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colorsWIN.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized2' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+WARNING: [Synth 8-7071] port 'addr2' of module 'RAM' is unconnected for instance 'ColorDataWIN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:156]
+WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ColorDataWIN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:156]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorDataWIN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:156]
+WARNING: [Synth 8-7071] port 'dataOut2' of module 'RAM' is unconnected for instance 'ColorDataWIN' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:156]
+WARNING: [Synth 8-7023] instance 'ColorDataWIN' of module 'RAM' has 8 connections declared, but only 4 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:156]
+INFO: [Synth 8-6157] synthesizing module 'ROM_hex__parameterized2' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
+	Parameter DATA_WIDTH bound to: 9 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 19 - type: integer 
+	Parameter DEPTH bound to: 307200 - type: integer 
+	Parameter MEMFILE bound to: 760'b0100001100111010001011110101010101110011011001010111001001110011001011110100111001101001011011010110000101111001011001010010000001000111011000010111001001101111011001000110100101100001001011110110100101000011011011000110111101110101011001000100010001110010011010010111011001100101001011110100010001100101011100110110101101110100011011110111000000101111001100110010110100110010001011110100010101000011010001010010000000110011001101010011000000101111011000100110110001100001011000110110101101101010011000010110001101101011001011010110110101100001011000110110100001101001011011100110010100101111011100110110111101110101011100100110001101100101011100110010111101101001011011010110000101100111011001010100110001001111010100110101001100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/imageLOSS.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_hex__parameterized2' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/ROM_hex.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized3' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 9 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter MEMFILE bound to: 768'b010000110011101000101111010101010111001101100101011100100111001100101111010011100110100101101101011000010111100101100101001000000100011101100001011100100110111101100100011010010110000100101111011010010100001101101100011011110111010101100100010001000111001001101001011101100110010100101111010001000110010101110011011010110111010001101111011100000010111100110011001011010011001000101111010001010100001101000101001000000011001100110101001100000010111101100010011011000110000101100011011010110110101001100001011000110110101100101101011011010110000101100011011010000110100101101110011001010010111101110011011011110111010101110010011000110110010101110011001011110110001101101111011011000110111101110010011100110100110001001111010100110101001100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/colorsLOSS.mem' is read successfully [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized3' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:2]
+WARNING: [Synth 8-7071] port 'addr2' of module 'RAM' is unconnected for instance 'ColorDataLOSS' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:177]
+WARNING: [Synth 8-7071] port 'addr3' of module 'RAM' is unconnected for instance 'ColorDataLOSS' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:177]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorDataLOSS' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:177]
+WARNING: [Synth 8-7071] port 'dataOut2' of module 'RAM' is unconnected for instance 'ColorDataLOSS' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:177]
+WARNING: [Synth 8-7023] instance 'ColorDataLOSS' of module 'RAM' has 8 connections declared, but only 4 given [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:177]
 INFO: [Synth 8-6157] synthesizing module 'mux_8_12bit' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_8_12bit.v:1]
 INFO: [Synth 8-6157] synthesizing module 'mux_4_12bit' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_4_12bit.v:1]
 INFO: [Synth 8-6157] synthesizing module 'mux_2_12bit' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_2_12bit.v:1]
@@ -173,6 +208,17 @@ INFO: [Synth 8-6155] done synthesizing module 'mux_4_12bit' (0#1) [C:/Users/Nima
 INFO: [Synth 8-6155] done synthesizing module 'mux_8_12bit' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/mux_8_12bit.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'VGAController' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:27]
+WARNING: [Synth 8-7129] Port addr[8] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr2[8] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[8] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[7] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[6] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[5] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[4] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[3] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[2] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[1] in module RAM__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr3[0] in module RAM__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr[8] in module RAM__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr2[8] in module RAM__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr3[8] in module RAM__parameterized2 is either unconnected or has no load
@@ -184,13 +230,8 @@ WARNING: [Synth 8-7129] Port addr3[3] in module RAM__parameterized2 is either un
 WARNING: [Synth 8-7129] Port addr3[2] in module RAM__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr3[1] in module RAM__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr3[0] in module RAM__parameterized2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[15] in module RAM__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[14] in module RAM__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[13] in module RAM__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[12] in module RAM__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[11] in module RAM__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[10] in module RAM__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr3[9] in module RAM__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[8] in module RAM__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr2[8] in module RAM__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr3[8] in module RAM__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr3[7] in module RAM__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr3[6] in module RAM__parameterized1 is either unconnected or has no load
@@ -267,26 +308,20 @@ WARNING: [Synth 8-7129] Port A[1] in module sra_8bit is either unconnected or ha
 WARNING: [Synth 8-7129] Port A[0] in module sra_8bit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port A[3] in module sra_4bit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port A[2] in module sra_4bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port A[1] in module sra_4bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port A[0] in module sra_4bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port A[1] in module sra_2bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port A[0] in module sra_2bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port A[0] in module sra_1bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port A[31] in module sll_16bit is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1208.250 ; gain = 698.375
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1704.758 ; gain = 1195.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1208.250 ; gain = 698.375
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1704.758 ; gain = 1195.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1208.250 ; gain = 698.375
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1704.758 ; gain = 1195.324
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.289 . Memory (MB): peak = 1208.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.274 . Memory (MB): peak = 1704.758 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -299,20 +334,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1295.586 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1704.758 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1295.586 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1704.758 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1295.586 ; gain = 785.711
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1704.758 ; gain = 1195.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1295.586 ; gain = 785.711
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1704.758 ; gain = 1195.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -321,10 +356,10 @@ Applied set_property IO_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  {c:
 Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  {c:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc}, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for pll. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1295.586 ; gain = 785.711
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1704.758 ; gain = 1195.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1295.586 ; gain = 785.711
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1991.844 ; gain = 1482.410
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'CPU/muxA' (mux_4) to 'CPU/muxA_muldiv'
 INFO: [Synth 8-223] decloning instance 'CPU/muxB' (mux_4) to 'CPU/muxB_muldiv'
@@ -376,18 +411,17 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 2     
 	               30 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
-	               12 Bit    Registers := 4     
+	               12 Bit    Registers := 8     
 	               10 Bit    Registers := 2     
-	                9 Bit    Registers := 2     
-	                5 Bit    Registers := 1     
+	                9 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 1713  
 +---RAMs : 
-	             316K Bit	(36000 X 9 bit)          RAMs := 1     
 	             128K Bit	(4096 X 32 bit)          RAMs := 1     
-	               3K Bit	(256 X 12 bit)          RAMs := 2     
+	               3K Bit	(256 X 12 bit)          RAMs := 4     
 +---ROMs : 
-	                    ROMs := 2     
+	                    ROMs := 5     
 +---Muxes : 
 	   2 Input   66 Bit        Muxes := 2     
 	   2 Input   64 Bit        Muxes := 1     
@@ -416,8 +450,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Debug: swapped A/B pins for adder 000002406F246360
-DSP Debug: swapped A/B pins for adder 000002406F228C00
+DSP Debug: swapped A/B pins for adder 00000146C4649BE0
+DSP Debug: swapped A/B pins for adder 00000146C464BF80
 DSP Report: Generating DSP VGA_display/imgAddress1, operation Mode is: A*(B:0x4b).
 DSP Report: operator VGA_display/imgAddress1 is absorbed into DSP VGA_display/imgAddress1.
 DSP Report: Generating DSP VGA_display/imgAddress, operation Mode is: C+A*(B:0x1ec3).
@@ -428,8 +462,10 @@ DSP Report: operator VGA_display/imgBTNAddress0 is absorbed into DSP VGA_display
 DSP Report: operator VGA_display/imgBTNAddress1 is absorbed into DSP VGA_display/imgBTNAddress0.
 DSP Report: Generating DSP VGA_display/imgBTNAddress, operation Mode is: PCIN+(A:0x0):B+(C:0xffffffffff38).
 DSP Report: operator VGA_display/imgBTNAddress is absorbed into DSP VGA_display/imgBTNAddress.
+DSP Report: Generating DSP VGA_display/WINAddr, operation Mode is: C+(A:0x280)*B.
+DSP Report: operator VGA_display/WINAddr is absorbed into DSP VGA_display/WINAddr.
+DSP Report: operator VGA_display/WINAddr0 is absorbed into DSP VGA_display/WINAddr.
 WARNING: [Synth 8-3936] Found unconnected internal register 'ProcMem/dataOut2_reg' and it is trimmed from '32' to '17' bits. [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:29]
-WARNING: [Synth 8-3936] Found unconnected internal register 'VGA_display/ImageDataBTN/dataOut_reg' and it is trimmed from '9' to '8' bits. [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/RAM.v:28]
 WARNING: [Synth 8-3332] Sequential element (i_0) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_2) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_4) is unused and will be removed from module Wrapper.
@@ -453,6 +489,22 @@ WARNING: [Synth 8-3332] Sequential element (i_12) is unused and will be removed 
 WARNING: [Synth 8-3332] Sequential element (i_14) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_16) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_18) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_20) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_22) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_24) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_0) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_2) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_4) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_6) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_8) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_10) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_12) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_14) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_16) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_18) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_20) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_22) is unused and will be removed from module Wrapper.
+WARNING: [Synth 8-3332] Sequential element (i_24) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_0) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_2) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_4) is unused and will be removed from module Wrapper.
@@ -467,36 +519,51 @@ WARNING: [Synth 8-3332] Sequential element (i_20) is unused and will be removed 
 WARNING: [Synth 8-3332] Sequential element (i_22) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_24) is unused and will be removed from module Wrapper.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1609.984 ; gain = 1100.109
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:37 . Memory (MB): peak = 2325.129 ; gain = 1815.695
 ---------------------------------------------------------------------------------
  Sort Area is  VGA_display/imgAddress_2 : 0 0 : 659 659 : Used 1 time 0
  Sort Area is  VGA_display/imgBTNAddress0_4 : 0 0 : 333 403 : Used 1 time 0
  Sort Area is  VGA_display/imgBTNAddress0_4 : 0 1 : 70 403 : Used 1 time 0
  Sort Area is  VGA_display/imgAddress1_0 : 0 0 : 313 313 : Used 1 time 0
+ Sort Area is  VGA_display/WINAddr_7 : 0 0 : 112 112 : Used 1 time 0
+WARNING: [Synth 8-5835] Resources of type BRAM have been overutilized. Used = 412, Available = 270. Will try to implement using LUT-RAM. 
+ DSP resource Status: VGA_display/imgAddress1_0 0 313 313: Used 1 time : Accepted (4 < 240) uniquify 0 
+ DSP resource Status: VGA_display/imgAddress_2 0 659 659: Used 1 time : Accepted (1 < 240) uniquify 0 
+ DSP resource Status: VGA_display/imgBTNAddress0_4 0 403 333: Used 1 time : Accepted (2 < 240) uniquify 0 
+ DSP resource Status: VGA_display/imgBTNAddress0_4 1 403 70: Used 1 time : Accepted (3 < 240) uniquify 0 
+ DSP resource Status: VGA_display/WINAddr_7 0 112 112: Used 1 time : Accepted (5 < 240) uniquify 0 
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping Report
-+------------+-----------------------------------+---------------+----------------+
-|Module Name | RTL Object                        | Depth x Width | Implemented As | 
-+------------+-----------------------------------+---------------+----------------+
-|Wrapper     | InstMem/dataOut_reg               | 4096x30       | Block RAM      | 
-|Wrapper     | VGA_display/ImageData/dataOut_reg | 131072x2      | Block RAM      | 
-+------------+-----------------------------------+---------------+----------------+
++------------+--------------------------------------+---------------+----------------+
+|Module Name | RTL Object                           | Depth x Width | Implemented As | 
++------------+--------------------------------------+---------------+----------------+
+|ROM_hex     | dataOut_reg                          | 524288x9      | Block RAM      | 
+|ROM_hex     | dataOut_reg                          | 524288x9      | Block RAM      | 
+|Wrapper     | InstMem/dataOut_reg                  | 4096x30       | Block RAM      | 
+|Wrapper     | VGA_display/ImageData/dataOut_reg    | 131072x5      | Block RAM      | 
+|Wrapper     | VGA_display/ImageDataBTN/dataOut_reg | 65536x9       | Block RAM      | 
+|Wrapper     | p_0_out                              | 131072x5      | LUT            | 
+|Wrapper     | p_0_out                              | 65536x9       | LUT            | 
+|Wrapper     | p_0_out                              | 524288x9      | LUT            | 
+|Wrapper     | p_0_out                              | 4096x30       | LUT            | 
++------------+--------------------------------------+---------------+----------------+
 
 
-Block RAM: Preliminary Mapping Report (see note below)
-+---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name          | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Wrapper              | ProcMem/MemoryArray_reg | 4 K x 32(READ_FIRST)   | W | R | 4 K x 17(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
-|RAM__parameterized0: | MemoryArray_reg         | 256 x 12(READ_FIRST)   | W | R | 256 x 12(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-|RAM__parameterized1: | MemoryArray_reg         | 35 K x 9(READ_FIRST)   | W | R | 35 K x 9(WRITE_FIRST)  |   | R | Port A and B     | 0      | 18     | 
-|RAM__parameterized2: | MemoryArray_reg         | 256 x 12(READ_FIRST)   | W | R | 256 x 12(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-+---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------------------------+-----------+----------------------+-------------------+
+|Module Name | RTL Object                                  | Inference | Size (Depth x Width) | Primitives        | 
++------------+---------------------------------------------+-----------+----------------------+-------------------+
+|Wrapper     | ProcMem/MemoryArray_reg                     | Implied   | 4 K x 32             | RAM128X1D x 1024  | 
+|Wrapper     | VGA_display/ColorPalette/MemoryArray_reg    | Implied   | 256 x 12             | RAM256X1S x 12    | 
+|Wrapper     | VGA_display/ColorPaletteBTN/MemoryArray_reg | Implied   | 256 x 12             | RAM256X1S x 12    | 
+|Wrapper     | VGA_display/ColorDataWIN/MemoryArray_reg    | Implied   | 256 x 12             | RAM256X1S x 12    | 
+|Wrapper     | VGA_display/ColorDataLOSS/MemoryArray_reg   | Implied   | 256 x 12             | RAM256X1S x 12    | 
++------------+---------------------------------------------+-----------+----------------------+-------------------+
 
-Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
 +--------------+-----------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -506,6 +573,7 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |VGAController | C+A*(B:0x1ec3)                    | 17     | 13     | 17     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGAController | (D+(A:0x3ffffed4))*(B:0xf0)       | 16     | 8      | -      | 9      | 24     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
 |Wrapper       | PCIN+(A:0x0):B+(C:0xffffffffff38) | 30     | 10     | 9      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|VGAController | C+(A:0x280)*B                     | 9      | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 +--------------+-----------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -516,27 +584,28 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 1609.984 ; gain = 1100.109
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:33 ; elapsed = 00:05:36 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:16 . Memory (MB): peak = 1680.641 ; gain = 1170.766
+Finished Timing Optimization : Time (s): cpu = 00:05:45 ; elapsed = 00:05:49 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
-Block RAM: Final Mapping Report
-+---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name          | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Wrapper              | ProcMem/MemoryArray_reg | 4 K x 32(READ_FIRST)   | W | R | 4 K x 17(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
-|RAM__parameterized0: | MemoryArray_reg         | 256 x 12(READ_FIRST)   | W | R | 256 x 12(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-|RAM__parameterized1: | MemoryArray_reg         | 35 K x 9(READ_FIRST)   | W | R | 35 K x 9(WRITE_FIRST)  |   | R | Port A and B     | 0      | 18     | 
-|RAM__parameterized2: | MemoryArray_reg         | 256 x 12(READ_FIRST)   | W | R | 256 x 12(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-+---------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+Distributed RAM: Final Mapping Report
++------------+---------------------------------------------+-----------+----------------------+-------------------+
+|Module Name | RTL Object                                  | Inference | Size (Depth x Width) | Primitives        | 
++------------+---------------------------------------------+-----------+----------------------+-------------------+
+|Wrapper     | ProcMem/MemoryArray_reg                     | Implied   | 4 K x 32             | RAM128X1D x 1024  | 
+|Wrapper     | VGA_display/ColorPalette/MemoryArray_reg    | Implied   | 256 x 12             | RAM256X1S x 12    | 
+|Wrapper     | VGA_display/ColorPaletteBTN/MemoryArray_reg | Implied   | 256 x 12             | RAM256X1S x 12    | 
+|Wrapper     | VGA_display/ColorDataWIN/MemoryArray_reg    | Implied   | 256 x 12             | RAM256X1S x 12    | 
+|Wrapper     | VGA_display/ColorDataLOSS/MemoryArray_reg   | Implied   | 256 x 12             | RAM256X1S x 12    | 
++------------+---------------------------------------------+-----------+----------------------+-------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -544,32 +613,48 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ColorPalette/MemoryArray_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/MemoryArray_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ColorPaletteBTN/MemoryArray_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/dataOut_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/dataOut_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/dataOut_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageData/dataOut_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_3_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_5_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_7_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataLOSS/dataOut_reg_9_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1698.738 ; gain = 1188.863
+Finished Technology Mapping : Time (s): cpu = 00:05:58 ; elapsed = 00:06:02 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -587,37 +672,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:22 . Memory (MB): peak = 1759.219 ; gain = 1249.344
+Finished IO Insertion : Time (s): cpu = 00:06:05 ; elapsed = 00:06:08 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:22 . Memory (MB): peak = 1759.219 ; gain = 1249.344
+Finished Renaming Generated Instances : Time (s): cpu = 00:06:05 ; elapsed = 00:06:08 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1759.219 ; gain = 1249.344
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:06:07 ; elapsed = 00:06:10 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1759.219 ; gain = 1249.344
+Finished Renaming Generated Ports : Time (s): cpu = 00:06:07 ; elapsed = 00:06:10 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1768.418 ; gain = 1258.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:09 ; elapsed = 00:06:12 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1768.418 ; gain = 1258.543
+Finished Renaming Generated Nets : Time (s): cpu = 00:06:09 ; elapsed = 00:06:12 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -628,9 +713,10 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |VGAController | A*B         | 17     | 7      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|VGAController | C+A*B       | 17     | 13     | 17     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|VGAController | C+A'*B      | 17     | 13     | 17     | -      | 17     | 1    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGAController | D+A*B       | 30     | 8      | -      | 9      | 0      | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
 |Wrapper       | PCIN+A:B+C  | 0      | 10     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|VGAController | C+A*B       | 9      | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 +--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
@@ -642,50 +728,53 @@ Report BlackBoxes:
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |clk_wiz  |     1|
-|2     |BUFG     |     1|
-|3     |CARRY4   |    13|
-|4     |DSP48E1  |     4|
-|8     |LUT1     |    18|
-|9     |LUT2     |   178|
-|10    |LUT3     |   377|
-|11    |LUT4     |   255|
-|12    |LUT5     |   566|
-|13    |LUT6     |  1285|
-|14    |MUXF7    |   256|
-|15    |RAMB18E1 |     2|
-|17    |RAMB36E1 |    32|
-|44    |FDCE     |  1625|
-|45    |FDRE     |   123|
-|46    |IBUF     |     3|
-|47    |OBUF     |    30|
-+------+---------+------+
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |clk_wiz   |     1|
+|2     |BUFG      |     1|
+|3     |CARRY4    |    13|
+|4     |DSP48E1   |     5|
+|9     |LUT1      |    51|
+|10    |LUT2      |   349|
+|11    |LUT3      |   888|
+|12    |LUT4      |   936|
+|13    |LUT5      |  3274|
+|14    |LUT6      | 10992|
+|15    |MUXF7     |  2778|
+|16    |MUXF8     |   233|
+|17    |RAM128X1D |  1024|
+|18    |RAM256X1S |    48|
+|19    |RAMB36E1  |    80|
+|42    |FDCE      |  1859|
+|43    |FDRE      |   387|
+|44    |IBUF      |     4|
+|45    |OBUF      |    30|
++------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1768.418 ; gain = 1258.543
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:09 ; elapsed = 00:06:12 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 57 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:19 . Memory (MB): peak = 1768.418 ; gain = 1171.207
-Synthesis Optimization Complete : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1768.418 ; gain = 1258.543
+Synthesis finished with 0 errors, 0 critical warnings and 72 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:05:52 ; elapsed = 00:06:08 . Memory (MB): peak = 3116.676 ; gain = 2607.242
+Synthesis Optimization Complete : Time (s): cpu = 00:06:09 ; elapsed = 00:06:13 . Memory (MB): peak = 3116.676 ; gain = 2607.242
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1777.648 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 307 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.311 . Memory (MB): peak = 3116.676 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4181 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1783.258 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 3116.676 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1072 instances were transformed.
+  RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 1024 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 48 instances
 
-Synth Design complete | Checksum: 17ca61ed
+Synth Design complete | Checksum: 5da4ad4a
 INFO: [Common 17-83] Releasing license: Synthesis
-182 Infos, 160 Warnings, 0 Critical Warnings and 0 Errors encountered.
+212 Infos, 181 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1783.258 ; gain = 0.000
+synth_design: Time (s): cpu = 00:06:21 ; elapsed = 00:06:26 . Memory (MB): peak = 3116.676 ; gain = 2815.172
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 3116.676 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/Wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 24 23:35:06 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 03:16:47 2025...
