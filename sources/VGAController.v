@@ -189,8 +189,8 @@ module VGAController(
 		.out(colorData),
 		.select(writeType),
 		.in0(12'hfff), // whiteScreen
-		.in1(12'hf00), // winScreenWrite
-		.in2(12'h0f0), // lossScreenWrite
+		.in1(12'h0f0), // winScreenWrite
+		.in2(12'hf00), // lossScreenWrite
 		.in3(12'hfff), // UNUSED
 		.in4(colorDataCard), // cardWrite
 		.in5(12'hfff), // UNUSED
