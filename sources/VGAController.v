@@ -176,14 +176,16 @@ module VGAController(
 
 	assign winState = winLoss[1] && !winLoss[0];
 	assign lossState = winLoss[0] && !winLoss[1];
+
+	wire notinWinLoss = ~winState && ~lossState;
     
 	wire [2:0] writeType; // 100 = cardWrite, 111 = controllerWrite, 001 = winScreenWrite, 010 = lossScreenWrite, 000 = whiteScreen
 	
 	assign LED_out = ((writeType == 010) || (writeType == 001)) ? writeType : 0;
 	    
-    assign writeType[2] = (isCardRegion || isBTNRegion) && ~winState && ~lossState; // cardWrite
-    assign writeType[1] = (isBTNRegion && !isCardRegion) || winState;
-    assign writeType[0] = (isBTNRegion && !isCardRegion) || lossState;
+    assign writeType[2] = (isCardRegion || isBTNRegion) && notinWinLoss; // cardWrite
+    assign writeType[1] = (isBTNRegion && !isCardRegion && notinWinLoss) || winState;
+    assign writeType[0] = (isBTNRegion && !isCardRegion && notinWinLoss) || lossState;
 
 	mux_8_12bit chooseWriteType(
 		.out(colorData),
@@ -191,10 +193,10 @@ module VGAController(
 		.in0(12'hfff), // whiteScreen
 		.in1(12'hf00), // winScreenWrite
 		.in2(12'h0f0), // lossScreenWrite
-		.in3(12'hfff), // UNUSED
+		.in3(12'h00f), // UNUSED
 		.in4(colorDataCard), // cardWrite
-		.in5(12'hfff), // UNUSED
-		.in6(12'hfff), // UNUSED
+		.in5(12'h0ff), // UNUSED
+		.in6(12'hff0), // UNUSED
 		.in7(colorBTN)  // controllerWrite
 	);
 

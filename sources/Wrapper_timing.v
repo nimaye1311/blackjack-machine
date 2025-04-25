@@ -61,7 +61,7 @@ module Wrapper (
     wire io_read, io_write;
     
     assign io_read = (memAddr == 32'd4096) ? 1'b1: 1'b0;
-    assign io_write = (memAddr == 32'd4097) ? 1'b1: 1'b0;
+    assign io_write = ((memAddr == 32'd4097) && mwe) ? 1'b1: 1'b0;
 //     always @(negedge clock) begin
 //           SW_M <= SW;
 //           SW_Q <= SW_M; 
@@ -121,7 +121,7 @@ module Wrapper (
 		.dataOut(memDataOut),
 		.dataOut2(cardIndex));
 
-	reg [1:0] winLoss;
+	reg [1:0] winLoss; // just to synth
 
 	always @(posedge clock) begin
 		if (io_write == 1'b1) begin

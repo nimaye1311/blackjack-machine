@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Fri Apr 25 04:18:06 2025
+| Date             : Fri Apr 25 13:55:03 2025
 | Host             : Nimaye-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.231        |
+| Total On-Chip Power (W)  | 0.229        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.131        |
+| Dynamic (W)              | 0.129        |
 | Device Static (W)        | 0.100        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.9         |
-| Junction Temperature (C) | 26.1         |
+| Max Ambient (C)          | 84.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        8 |       --- |             --- |
-| Slice Logic    |     0.005 |     5348 |       --- |             --- |
-|   LUT as Logic |     0.005 |     2398 |     63400 |            3.78 |
-|   Register     |    <0.001 |     1752 |    126800 |            1.38 |
+| Slice Logic    |     0.005 |     5282 |       --- |             --- |
+|   LUT as Logic |     0.005 |     2322 |     63400 |            3.66 |
+|   Register     |    <0.001 |     1748 |    126800 |            1.38 |
 |   F7/F8 Muxes  |    <0.001 |      256 |     63400 |            0.40 |
 |   CARRY4       |    <0.001 |       13 |     15850 |            0.08 |
-|   Others       |     0.000 |      575 |       --- |             --- |
-| Signals        |     0.007 |     4026 |       --- |             --- |
+|   Others       |     0.000 |      572 |       --- |             --- |
+| Signals        |     0.007 |     3959 |       --- |             --- |
 | Block RAM      |     0.016 |       45 |       135 |           33.33 |
 | PLL            |     0.098 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        4 |       240 |            1.67 |
-| I/O            |     0.002 |       34 |       210 |           16.19 |
+| I/O            |    <0.001 |       34 |       210 |           16.19 |
 | Static Power   |     0.100 |          |           |                 |
-| Total          |     0.231 |          |           |                 |
+| Total          |     0.229 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.055 |       0.039 |      0.016 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.055 |       0.038 |      0.016 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.068 |       0.049 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -149,14 +149,13 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| Wrapper                |     0.131 |
+| Wrapper                |     0.129 |
 |   CPU                  |     0.011 |
-|     dx_insn            |     0.004 |
+|     dx_insn            |     0.003 |
 |       dffe_gen[21].dff |     0.002 |
 |     md_unit            |     0.003 |
-|       divide           |     0.001 |
 |       multiply         |     0.001 |
-|     mw_insn            |     0.002 |
+|     mw_insn            |     0.001 |
 |   InstMem              |     0.002 |
 |   ProcMem              |     0.003 |
 |   RegisterFile         |     0.002 |

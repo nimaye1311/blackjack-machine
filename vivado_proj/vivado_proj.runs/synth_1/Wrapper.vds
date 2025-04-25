@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Apr 25 04:03:02 2025
-# Process ID         : 3856
+# Start of session at: Fri Apr 25 13:51:46 2025
+# Process ID         : 39324
 # Current directory  : C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1
 # Command line       : vivado.exe -log Wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
 # Log file           : C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/Wrapper.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 17084 MB
-# Swap memory        : 19468 MB
-# Total Virtual      : 36553 MB
-# Available Virtual  : 6904 MB
+# Swap memory        : 18301 MB
+# Total Virtual      : 35386 MB
+# Available Virtual  : 6749 MB
 #-----------------------------------------------------------
 source Wrapper.tcl -notrace
 Command: synth_design -top Wrapper -part xc7a100tcsg324-1
@@ -29,15 +29,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 27596
+INFO: [Synth 8-7075] Helper process launched with PID 5096
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 978.504 ; gain = 469.035
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 978.414 ; gain = 469.207
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'winState', assumed default net type 'wire' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:177]
 INFO: [Synth 8-11241] undeclared symbol 'lossState', assumed default net type 'wire' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/VGAController.v:178]
 INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/Wrapper_timing.v:27]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-3856-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-3856-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-39324-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-39324-Nimaye-PC/realtime/clk_wiz_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/processor.v:20]
 INFO: [Synth 8-6157] synthesizing module 'latch' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/latch.v:1]
 INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/sources/dffe_ref.v:1]
@@ -281,18 +281,18 @@ WARNING: [Synth 8-7129] Port A[16] in module sll_16bit is either unconnected or 
 WARNING: [Synth 8-7129] Port A[31] in module sll_8bit is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1228.961 ; gain = 719.492
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1229.809 ; gain = 720.602
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1228.961 ; gain = 719.492
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1229.809 ; gain = 720.602
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1228.961 ; gain = 719.492
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1229.809 ; gain = 720.602
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.297 . Memory (MB): peak = 1228.961 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.287 . Memory (MB): peak = 1229.809 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -305,20 +305,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1314.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1312.090 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1314.336 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1312.090 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1314.336 ; gain = 804.867
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1312.090 ; gain = 802.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1314.336 ; gain = 804.867
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1312.090 ; gain = 802.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -327,10 +327,10 @@ Applied set_property IO_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  {c:
 Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  {c:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc}, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for pll. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1314.336 ; gain = 804.867
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1312.090 ; gain = 802.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1314.336 ; gain = 804.867
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1312.090 ; gain = 802.883
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'CPU/muxA' (mux_4) to 'CPU/muxA_muldiv'
 INFO: [Synth 8-223] decloning instance 'CPU/muxB' (mux_4) to 'CPU/muxB_muldiv'
@@ -380,7 +380,7 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 338   
 +---Registers : 
 	               32 Bit    Registers := 2     
-	               31 Bit    Registers := 1     
+	               30 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
 	               12 Bit    Registers := 4     
 	               10 Bit    Registers := 2     
@@ -421,8 +421,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Debug: swapped A/B pins for adder 00000189E340FCC0
-DSP Debug: swapped A/B pins for adder 00000189E3412A80
+DSP Debug: swapped A/B pins for adder 000001617220AFA0
+DSP Debug: swapped A/B pins for adder 000001617220DBE0
 DSP Report: Generating DSP VGA_display/imgAddress1, operation Mode is: A*(B:0x4b).
 DSP Report: operator VGA_display/imgAddress1 is absorbed into DSP VGA_display/imgAddress1.
 DSP Report: Generating DSP VGA_display/imgAddress, operation Mode is: C+A*(B:0x1ec3).
@@ -461,7 +461,7 @@ WARNING: [Synth 8-3332] Sequential element (i_20) is unused and will be removed 
 WARNING: [Synth 8-3332] Sequential element (i_22) is unused and will be removed from module Wrapper.
 WARNING: [Synth 8-3332] Sequential element (i_24) is unused and will be removed from module Wrapper.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 1749.797 ; gain = 1240.328
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 1744.426 ; gain = 1235.219
 ---------------------------------------------------------------------------------
  Sort Area is  VGA_display/imgAddress_2 : 0 0 : 659 659 : Used 1 time 0
  Sort Area is  VGA_display/imgBTNAddress0_4 : 0 0 : 333 403 : Used 1 time 0
@@ -475,7 +475,7 @@ ROM: Preliminary Mapping Report
 +------------+--------------------------------------+---------------+----------------+
 |Module Name | RTL Object                           | Depth x Width | Implemented As | 
 +------------+--------------------------------------+---------------+----------------+
-|Wrapper     | InstMem/dataOut_reg                  | 4096x31       | Block RAM      | 
+|Wrapper     | InstMem/dataOut_reg                  | 4096x30       | Block RAM      | 
 |Wrapper     | VGA_display/ImageData/dataOut_reg    | 131072x5      | Block RAM      | 
 |Wrapper     | VGA_display/ImageDataBTN/dataOut_reg | 65536x9       | Block RAM      | 
 +------------+--------------------------------------+---------------+----------------+
@@ -510,13 +510,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1749.797 ; gain = 1240.328
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1744.426 ; gain = 1235.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 1766.098 ; gain = 1256.629
+Finished Timing Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 1764.262 ; gain = 1255.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -568,7 +568,7 @@ INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/dataOu
 INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/dataOut_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance VGA_display/ImageDataBTN/dataOut_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1778.414 ; gain = 1268.945
+Finished Technology Mapping : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1769.434 ; gain = 1260.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -586,37 +586,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:27 ; elapsed = 00:01:28 . Memory (MB): peak = 1814.293 ; gain = 1304.824
+Finished IO Insertion : Time (s): cpu = 00:01:27 ; elapsed = 00:01:28 . Memory (MB): peak = 1811.652 ; gain = 1302.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:27 ; elapsed = 00:01:28 . Memory (MB): peak = 1814.293 ; gain = 1304.824
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:27 ; elapsed = 00:01:28 . Memory (MB): peak = 1811.652 ; gain = 1302.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1814.293 ; gain = 1304.824
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1811.652 ; gain = 1302.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1814.293 ; gain = 1304.824
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1811.652 ; gain = 1302.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1822.270 ; gain = 1312.801
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1820.816 ; gain = 1311.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1822.270 ; gain = 1312.801
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1820.816 ; gain = 1311.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -649,41 +649,41 @@ Report Cell Usage:
 |3     |CARRY4   |    13|
 |4     |DSP48E1  |     4|
 |8     |LUT1     |    18|
-|9     |LUT2     |   176|
-|10    |LUT3     |   398|
-|11    |LUT4     |   244|
-|12    |LUT5     |   606|
-|13    |LUT6     |  1305|
+|9     |LUT2     |   177|
+|10    |LUT3     |   413|
+|11    |LUT4     |   259|
+|12    |LUT5     |   564|
+|13    |LUT6     |  1257|
 |14    |MUXF7    |   256|
 |15    |RAMB18E1 |     2|
 |17    |RAMB36E1 |    44|
-|56    |FDCE     |  1629|
+|56    |FDCE     |  1625|
 |57    |FDRE     |   123|
 |58    |IBUF     |     3|
 |59    |OBUF     |    30|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1822.270 ; gain = 1312.801
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1820.816 ; gain = 1311.609
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 46 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:16 ; elapsed = 00:01:26 . Memory (MB): peak = 1822.270 ; gain = 1227.426
-Synthesis Optimization Complete : Time (s): cpu = 00:01:28 ; elapsed = 00:01:30 . Memory (MB): peak = 1822.270 ; gain = 1312.801
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:16 ; elapsed = 00:01:26 . Memory (MB): peak = 1820.816 ; gain = 1229.328
+Synthesis Optimization Complete : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1820.816 ; gain = 1311.609
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 1831.418 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.122 . Memory (MB): peak = 1830.031 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 319 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1838.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1837.871 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: ab04d764
+Synth Design complete | Checksum: 6064e029
 INFO: [Common 17-83] Releasing license: Synthesis
 190 Infos, 144 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 1838.395 ; gain = 1538.035
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1838.395 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 1837.871 ; gain = 1537.699
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1837.871 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Nimaye Garodia/iCloudDrive/Desktop/3-2/ECE 350/blackjack-machine/vivado_proj/vivado_proj.runs/synth_1/Wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 04:04:42 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 13:53:26 2025...

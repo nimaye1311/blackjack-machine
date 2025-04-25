@@ -22,6 +22,7 @@ reset:
 	addi $29, $0, 21 # const. value 21
 	addi $10, $0, 0 # index for all cards array
 	addi $11, $0, 8
+	sw $0, 4097($0) # reset player loss flag in mem location 4097
 clear_mem:
 	sw $1, 16($10) # clear cards arr
 	sw $1, 26($10) # clear cards arr
@@ -109,8 +110,8 @@ less_than_10_3:
 	addi $4, $4, 1 # increment player # cards drawn
 	addi $22, $0, 1 
 	sll $22, $22, 23 # get 2^23 cycles of stall (approx 1 sec) (number of cyces in $22)
-	blt $29, $5, player_loss
 	jal delay # delay for 1 sec
+	blt $29, $5, player_loss
 no_BTNU_pressed:
 	addi $21, $0, 2
 	bne $20, $21, no_BTND_pressed
@@ -147,20 +148,16 @@ loop_2:
 
 player_loss:
 	addi $22, $0, 1
-	sw $22, 4097($0) # set player loss flag in mem location 4 as 01 (binary)
+	sw $22, 4097($0) # set player loss flag in mem location 4097 as 01 (binary)
 	addi $22, $0, 1
 	sll $22, $22, 24 # get 2^26 cycles of stall (approx 1 sec) (number of cyces in $22)
 	jal delay # delay for 1 sec
-	sw $0, 4097($0) # reset player loss flag in mem location 4
-	addi $22, $0, 0
 	j reset
 
 player_win:
 	addi $22, $0, 2
-	sw $22, 4097($0) # set player loss flag in mem location 4 as 10 (binary)
+	sw $22, 4097($0) # set player loss flag in mem location 4097 as 10 (binary)
 	addi $22, $0, 1
 	sll $22, $22, 24 # get 2^26 cycles of stall (approx 1 sec) (number of cyces in $22)
 	jal delay # delay for 1 sec
-	sw $0, 4097($0) # reset player loss flag in mem location 4
-	addi $22, $0, 0
 	j reset
