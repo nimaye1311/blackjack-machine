@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date                      : Tue Apr 22 12:47:37 2025
-| Host                      : Nimaye-PC running 64-bit major release  (build 9200)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version              : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date                      : Tue Apr 15 18:24:36 2025
+| Host                      : P1-08 running 64-bit major release  (build 9200)
 | Command                   : report_io -file Wrapper_io_placed.rpt
 | Design                    : Wrapper
 | Device                    : xc7a100t
@@ -10,7 +10,7 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanc
 | Package                   : csg324
 | Package Version           : FINAL 2012-07-17
 | Package Pin Delay Version : VERS. 2.0 2012-07-17
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 IO Information
 

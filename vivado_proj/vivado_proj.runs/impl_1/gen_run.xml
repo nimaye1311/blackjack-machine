@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1745340314">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1744755756">
+  <File Type="ROUTE-PWR" Name="Wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Wrapper.tcl"/>
-  <File Type="REPORTS-TCL" Name="Wrapper_reports.tcl"/>
+  <File Type="BITSTR-MMI" Name="Wrapper.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="Wrapper_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="Wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="Wrapper_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="Wrapper_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="Wrapper_opt.dcp"/>
   <File Type="OPT-DRC" Name="Wrapper_drc_opted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Wrapper_methodology_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="Wrapper.hwdef"/>
-  <File Type="OPT-TIMING" Name="Wrapper_timing_summary_opted.rpt"/>
-  <File Type="OPT-RQA-PB" Name="Wrapper_rqa_opted.pb"/>
   <File Type="PWROPT-DCP" Name="Wrapper_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="Wrapper_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="Wrapper_timing_summary_pwropted.rpt"/>
@@ -20,12 +22,14 @@
   <File Type="PLACE-CTRL" Name="Wrapper_control_sets_placed.rpt"/>
   <File Type="PLACE-SIMILARITY" Name="Wrapper_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="Wrapper.bin"/>
   <File Type="PLACE-TIMING" Name="Wrapper_timing_summary_placed.rpt"/>
-  <File Type="PLACE-RQA-PB" Name="Wrapper_rqa_placed.pb"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Wrapper_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="Wrapper.msk"/>
   <File Type="POSTPLACE-PWROPT-TIMING" Name="Wrapper_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="Wrapper_physopt.dcp"/>
   <File Type="PHYSOPT-DRC" Name="Wrapper_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="Wrapper.rbt"/>
   <File Type="PHYSOPT-TIMING" Name="Wrapper_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="Wrapper_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="Wrapper_routed.dcp"/>
@@ -36,8 +40,6 @@
   <File Type="ROUTE-METHODOLOGY-DRC" Name="Wrapper_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Wrapper_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Wrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="Wrapper_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="Wrapper_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="Wrapper_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="Wrapper_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="Wrapper_route_status.pb"/>
@@ -49,25 +51,18 @@
   <File Type="ROUTE-BUS-SKEW" Name="Wrapper_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="Wrapper_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="Wrapper_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-RQS-PB" Name="Wrapper_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Wrapper_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Wrapper_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Wrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Wrapper_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Wrapper_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="Wrapper.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Wrapper_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BG-BIT" Name="Wrapper.bit"/>
-  <File Type="BG-BIN" Name="Wrapper.bin"/>
-  <File Type="BITSTR-MSK" Name="Wrapper.msk"/>
-  <File Type="BITSTR-RBT" Name="Wrapper.rbt"/>
   <File Type="BITSTR-NKY" Name="Wrapper.nky"/>
   <File Type="BITSTR-BMM" Name="Wrapper_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="Wrapper.mmi"/>
   <File Type="PDI-FILE" Name="Wrapper.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="Wrapper_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="Wrapper_pld.pdi"/>
   <File Type="RCFI_FILE" Name="Wrapper.rcfi"/>
   <File Type="CFI_FILE" Name="Wrapper.cfi"/>
   <File Type="RNPI_FILE" Name="Wrapper.rnpi"/>
@@ -80,10 +75,6 @@
   <File Type="BG-DRC" Name="Wrapper.drc"/>
   <File Type="RDI-RDI" Name="Wrapper.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="Wrapper_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="Wrapper_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../sources/RAM.v">
@@ -212,13 +203,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../sources/mux_2_12bit.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../sources/mux_32.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -233,21 +217,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../sources/mux_4_12bit.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../sources/mux_8.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../sources/mux_8_12bit.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -276,13 +246,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../sources/regfile.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../sources/rng.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -415,6 +378,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../sources/sprites.mem">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../sources/timing.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -422,6 +391,12 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../sources/colors.mem">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../sources/ascii.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -439,7 +414,7 @@
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PPRDIR/../constraints/master.xdc">
       <FileInfo>
@@ -452,7 +427,7 @@
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>

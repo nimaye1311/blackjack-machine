@@ -2,7 +2,7 @@ main:
 	addi $s0, $0, 10
 	addi $t0, $0, 16
 	addi $t1, $0, 4
-	# sw $t1, 0($t1)
+	sw $t1, 0($t1)
 	jal read_mem
 	add $s1, $v0, $0
 	mul $a0, $s1, $s0
